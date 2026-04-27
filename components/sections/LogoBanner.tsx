@@ -16,24 +16,24 @@ export default function LogoBanner() {
   const marqueeItems = [...companies, ...companies];
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
+    <section className="py-12 bg-zinc-950 overflow-hidden border-y border-zinc-800/50">
       <Container>
         <ScrollReveal>
-          <p className="text-navy-400 text-xs uppercase tracking-[0.2em] text-center mb-8 font-medium">
+          <p className="text-zinc-500 text-xs uppercase tracking-[0.2em] text-center mb-8 font-medium">
             Trusted by businesses worldwide
           </p>
         </ScrollReveal>
       </Container>
 
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
 
         <div className="flex animate-marquee">
           {marqueeItems.map((name, i) => (
             <span
               key={`${name}-${i}`}
-              className="text-navy-300 text-lg font-bold whitespace-nowrap px-10 hover:text-navy-500 transition-colors cursor-default select-none"
+              className="text-zinc-600 text-lg font-bold whitespace-nowrap px-10 hover:text-zinc-400 transition-colors cursor-default select-none"
             >
               {name}
             </span>

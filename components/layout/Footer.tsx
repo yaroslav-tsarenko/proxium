@@ -42,23 +42,24 @@ export function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="bg-navy-900 text-white">
+    <footer className="border-t border-zinc-800 bg-zinc-950">
+      <div className="h-px bg-gradient-to-r from-transparent via-green-500/50 to-transparent" />
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
+              <div className="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center">
+                <span className="text-zinc-950 font-bold text-sm">P</span>
               </div>
-              <span className="text-xl font-bold text-white">Proxium</span>
+              <span className="text-xl font-bold text-zinc-50">Proxium</span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-navy-400 max-w-xs">
+            <p className="mt-4 text-sm leading-relaxed text-zinc-400 max-w-xs">
               {t("description")}
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-white">
+            <h3 className="mb-4 text-sm font-semibold text-zinc-50">
               {t("products")}
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -66,7 +67,7 @@ export function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-sm text-navy-400 transition-colors hover:text-white"
+                    className="text-sm text-zinc-400 transition-colors hover:text-zinc-50"
                   >
                     {label}
                   </Link>
@@ -76,7 +77,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-white">
+            <h3 className="mb-4 text-sm font-semibold text-zinc-50">
               {t("useCasesTitle")}
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -84,7 +85,7 @@ export function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-sm text-navy-400 transition-colors hover:text-white"
+                    className="text-sm text-zinc-400 transition-colors hover:text-zinc-50"
                   >
                     {label}
                   </Link>
@@ -94,7 +95,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-white">
+            <h3 className="mb-4 text-sm font-semibold text-zinc-50">
               {t("resources")}
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -102,7 +103,7 @@ export function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-sm text-navy-400 transition-colors hover:text-white"
+                    className="text-sm text-zinc-400 transition-colors hover:text-zinc-50"
                   >
                     {label}
                   </Link>
@@ -112,7 +113,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-white">
+            <h3 className="mb-4 text-sm font-semibold text-zinc-50">
               {t("company")}
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -120,7 +121,7 @@ export function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-sm text-navy-400 transition-colors hover:text-white"
+                    className="text-sm text-zinc-400 transition-colors hover:text-zinc-50"
                   >
                     {label}
                   </Link>
@@ -130,8 +131,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start gap-4 border-t border-navy-800 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-medium text-navy-400">
+        <div className="mt-12 flex flex-col items-start gap-4 border-t border-zinc-800 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm font-medium text-zinc-400">
             {t("newsletter")}
           </p>
           <form
@@ -141,36 +142,36 @@ export function Footer() {
             <input
               type="email"
               placeholder={t("emailPlaceholder")}
-              className="flex-1 rounded-xl border border-navy-700 bg-navy-800 px-4 py-2.5 text-sm text-white placeholder:text-navy-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+              className="flex-1 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-50 placeholder:text-zinc-500 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
             />
             <button
               type="submit"
-              className="rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-400"
+              className="rounded-xl bg-green-500 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-green-400"
             >
               {t("subscribe")}
             </button>
           </form>
         </div>
 
-        <div className="mt-8 flex flex-col items-center gap-4 border-t border-navy-800 pt-8 text-sm text-navy-400 sm:flex-row sm:justify-between">
+        <div className="mt-8 flex flex-col items-center gap-4 border-t border-zinc-800 pt-8 text-sm text-zinc-400 sm:flex-row sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Proxium. {t("rights")}</p>
 
           <div className="flex items-center gap-6">
             <Link
               href="/legal/terms"
-              className="transition-colors hover:text-white"
+              className="transition-colors hover:text-zinc-50"
             >
               {t("terms")}
             </Link>
             <Link
               href="/legal/privacy"
-              className="transition-colors hover:text-white"
+              className="transition-colors hover:text-zinc-50"
             >
               {t("privacy")}
             </Link>
             <Link
               href="/legal/acceptable-use"
-              className="transition-colors hover:text-white"
+              className="transition-colors hover:text-zinc-50"
             >
               {t("acceptable")}
             </Link>

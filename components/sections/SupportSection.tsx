@@ -7,27 +7,27 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import StaggerChildren from "@/components/animations/StaggerChildren";
 
 const supportItems = [
-  { key: "dedicated", icon: Headphones, color: "text-primary-600", bg: "bg-primary-50" },
-  { key: "helpCenter", icon: BookOpen, color: "text-blue-500", bg: "bg-blue-50" },
-  { key: "setup", icon: Rocket, color: "text-emerald-500", bg: "bg-emerald-50" },
-  { key: "troubleshooting", icon: Wrench, color: "text-orange-500", bg: "bg-orange-50" },
+  { key: "dedicated", icon: Headphones, color: "text-green-400", bg: "bg-green-500/10" },
+  { key: "helpCenter", icon: BookOpen, color: "text-blue-400", bg: "bg-blue-500/10" },
+  { key: "setup", icon: Rocket, color: "text-cyan-400", bg: "bg-cyan-500/10" },
+  { key: "troubleshooting", icon: Wrench, color: "text-violet-400", bg: "bg-violet-500/10" },
 ];
 
 export default function SupportSection() {
   const t = useTranslations("support");
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-20 lg:py-28 bg-zinc-950">
       <Container>
         <ScrollReveal>
           <div className="flex flex-col items-center text-center">
-            <span className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
+            <span className="inline-flex items-center bg-green-500/10 text-green-400 border border-green-500/20 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
               {t("sectionTag")}
             </span>
-            <h2 className="text-navy-900 text-3xl lg:text-4xl font-bold tracking-tight mt-4">
+            <h2 className="text-zinc-50 text-3xl lg:text-4xl font-bold tracking-tight mt-4">
               {t("title")}
             </h2>
-            <p className="text-navy-500 text-lg mt-4 max-w-2xl">
+            <p className="text-zinc-400 text-lg mt-4 max-w-2xl">
               {t("subtitle")}
             </p>
           </div>
@@ -40,16 +40,16 @@ export default function SupportSection() {
             return (
               <div
                 key={item.key}
-                className="bg-surface-1 border border-navy-100 rounded-2xl p-7 text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className="bg-zinc-900 border border-zinc-800 rounded-2xl p-7 text-center hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center mx-auto`}>
                   <Icon className={`w-6 h-6 ${item.color}`} />
                 </div>
 
-                <h3 className="text-navy-900 text-lg font-bold mt-5">
+                <h3 className="text-zinc-50 text-lg font-bold mt-5">
                   {t(`items.${item.key}.title`)}
                 </h3>
-                <p className="text-navy-500 text-sm mt-2 leading-relaxed">
+                <p className="text-zinc-400 text-sm mt-2 leading-relaxed">
                   {t(`items.${item.key}.description`)}
                 </p>
               </div>

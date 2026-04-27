@@ -48,16 +48,16 @@ export function Header() {
         className={cn(
           "fixed inset-x-0 top-0 z-40 h-16 transition-all duration-300",
           scrolled
-            ? "border-b border-navy-200 bg-white/90 backdrop-blur-xl shadow-sm"
+            ? "border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-xl shadow-sm"
             : "bg-transparent",
         )}
       >
         <Container className="flex h-full items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">P</span>
+            <div className="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center">
+              <span className="text-zinc-950 font-bold text-sm">P</span>
             </div>
-            <span className="text-xl font-bold text-navy-900">
+            <span className="text-xl font-bold text-zinc-50">
               Proxium
             </span>
           </Link>
@@ -67,7 +67,7 @@ export function Header() {
               <Link
                 key={key}
                 href={href}
-                className="text-sm font-medium text-navy-600 transition-colors hover:text-navy-900"
+                className="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
               >
                 {t(key)}
               </Link>
@@ -78,23 +78,23 @@ export function Header() {
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-navy-500 transition-colors hover:text-navy-900"
+                className="flex items-center gap-1 text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
               >
                 {locale.toUpperCase()}
                 <ChevronDown className="h-3.5 w-3.5" />
               </button>
 
               {langOpen && (
-                <div className="absolute right-0 top-full mt-2 min-w-[140px] rounded-xl border border-navy-200 bg-white py-1 shadow-lg">
+                <div className="absolute right-0 top-full mt-2 min-w-[140px] rounded-xl border border-zinc-800 bg-zinc-900 py-1 shadow-lg">
                   {locales.map((loc) => (
                     <button
                       key={loc}
                       onClick={() => switchLocale(loc)}
                       className={cn(
-                        "flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm transition-colors hover:bg-navy-50",
+                        "flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm transition-colors hover:bg-zinc-800",
                         loc === locale
-                          ? "text-primary-600 font-medium"
-                          : "text-navy-600",
+                          ? "text-green-400 font-medium"
+                          : "text-zinc-400",
                       )}
                     >
                       {localeNames[loc]}
@@ -106,14 +106,14 @@ export function Header() {
 
             <Link
               href="/sign-in"
-              className="text-sm font-medium text-navy-600 transition-colors hover:text-navy-900"
+              className="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
             >
               {t("signIn")}
             </Link>
 
             <Link
               href="/get-started"
-              className="rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 shadow-sm"
+              className="rounded-xl bg-green-500 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-green-400 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
             >
               {t("getStarted")}
             </Link>
@@ -121,7 +121,7 @@ export function Header() {
 
           <button
             onClick={() => setMobileOpen(true)}
-            className="text-navy-600 transition-colors hover:text-navy-900 lg:hidden"
+            className="text-zinc-400 transition-colors hover:text-zinc-50 lg:hidden"
             aria-label="Open menu"
           >
             <Menu className="h-6 w-6" />

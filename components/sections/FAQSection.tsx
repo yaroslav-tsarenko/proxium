@@ -16,14 +16,14 @@ export default function FAQSection() {
   const t = useTranslations("faq");
 
   return (
-    <section className="py-20 lg:py-28 bg-surface-1">
+    <section className="py-20 lg:py-28 bg-zinc-900/30">
       <Container>
         <ScrollReveal>
           <div className="flex flex-col items-center text-center">
-            <span className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
+            <span className="inline-flex items-center bg-green-500/10 text-green-400 border border-green-500/20 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
               {t("sectionTag")}
             </span>
-            <h2 className="text-navy-900 text-3xl lg:text-4xl font-bold tracking-tight mt-4">
+            <h2 className="text-zinc-50 text-3xl lg:text-4xl font-bold tracking-tight mt-4">
               {t("title")}
             </h2>
           </div>
@@ -33,11 +33,11 @@ export default function FAQSection() {
           <div className="max-w-3xl mx-auto mt-12">
             <Accordion type="single" collapsible>
               {faqKeys.map((key) => (
-                <AccordionItem key={key} value={key} className="border-navy-100">
-                  <AccordionTrigger className="text-navy-900 text-base font-medium hover:text-primary-600">
+                <AccordionItem key={key} value={key} className="border-zinc-800">
+                  <AccordionTrigger className="text-zinc-50 text-base font-medium hover:text-green-400">
                     {t(`items.${key}.question`)}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 text-sm leading-relaxed">
+                  <AccordionContent className="text-zinc-400 text-sm leading-relaxed">
                     {t(`items.${key}.answer`)}
                   </AccordionContent>
                 </AccordionItem>

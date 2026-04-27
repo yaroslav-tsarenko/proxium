@@ -63,24 +63,24 @@ const samplePosts = [
 ];
 
 const categoryColors: Record<string, string> = {
-  Guide: "bg-primary-50 text-primary-700",
-  Tutorial: "bg-blue-50 text-blue-600",
-  Industry: "bg-emerald-50 text-emerald-600",
+  Guide: "bg-green-500/10 text-green-400",
+  Tutorial: "bg-blue-500/10 text-blue-400",
+  Industry: "bg-cyan-500/10 text-cyan-400",
 };
 
 export default function BlogPage() {
   return (
-    <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white">
+    <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 bg-zinc-950">
       <Container>
         <ScrollReveal>
           <div className="flex flex-col items-center text-center">
-            <span className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
+            <span className="inline-flex items-center bg-green-500/10 text-green-400 border border-green-500/20 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
               Blog
             </span>
-            <h1 className="text-navy-900 text-4xl lg:text-5xl font-bold tracking-tight mt-4">
+            <h1 className="text-zinc-50 text-4xl lg:text-5xl font-bold tracking-tight mt-4">
               Proxy insights & guides
             </h1>
-            <p className="text-navy-500 text-lg mt-4 max-w-2xl">
+            <p className="text-zinc-400 text-lg mt-4 max-w-2xl">
               Guides, tutorials, and industry insights from the Proxium team.
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function BlogPage() {
           {samplePosts.map((post) => (
             <article
               key={post.slug}
-              className="bg-white border border-navy-100 rounded-2xl p-6 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+              className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
             >
               <div className="flex items-center gap-2 mb-4">
                 <span
@@ -102,23 +102,23 @@ export default function BlogPage() {
                 </span>
               </div>
 
-              <h2 className="text-navy-900 text-lg font-bold group-hover:text-primary-600 transition-colors">
+              <h2 className="text-zinc-50 text-lg font-bold group-hover:text-green-400 transition-colors">
                 {post.title}
               </h2>
 
-              <p className="text-navy-500 text-sm mt-3 flex-1 leading-relaxed">
+              <p className="text-zinc-400 text-sm mt-3 flex-1 leading-relaxed">
                 {post.excerpt}
               </p>
 
-              <div className="flex items-center justify-between mt-6 pt-4 border-t border-navy-100">
-                <div className="flex items-center gap-3 text-navy-400 text-xs">
+              <div className="flex items-center justify-between mt-6 pt-4 border-t border-zinc-800">
+                <div className="flex items-center gap-3 text-zinc-500 text-xs">
                   <span>{post.date}</span>
                   <span className="flex items-center gap-1">
                     <Clock className="w-3 h-3" />
                     {post.readTime}
                   </span>
                 </div>
-                <span className="text-navy-400 text-xs group-hover:text-primary-600 transition-colors flex items-center gap-1">
+                <span className="text-zinc-500 text-xs group-hover:text-green-400 transition-colors flex items-center gap-1">
                   Read <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
@@ -128,17 +128,17 @@ export default function BlogPage() {
 
         <ScrollReveal>
           <div className="mt-16 text-center">
-            <div className="bg-surface-1 border border-navy-100 rounded-2xl p-8 max-w-xl mx-auto">
-              <p className="text-navy-500 text-sm">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 max-w-xl mx-auto">
+              <p className="text-zinc-400 text-sm">
                 More articles coming soon. Subscribe to get notified.
               </p>
               <div className="mt-4 flex gap-2">
                 <input
                   type="email"
                   placeholder="you@company.com"
-                  className="flex-1 px-4 py-2.5 bg-white border border-navy-200 rounded-xl text-navy-900 text-sm placeholder:text-navy-400 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="flex-1 px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-xl text-zinc-50 text-sm placeholder:text-zinc-500 focus:outline-none focus:border-green-500 transition-colors"
                 />
-                <button className="px-6 py-2.5 rounded-xl bg-primary-500 text-white font-semibold text-sm hover:bg-primary-600 transition-colors">
+                <button className="px-6 py-2.5 rounded-xl bg-green-500 text-zinc-950 font-semibold text-sm hover:bg-green-400 transition-colors">
                   Subscribe
                 </button>
               </div>

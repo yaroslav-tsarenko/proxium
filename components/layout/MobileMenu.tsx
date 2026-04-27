@@ -84,12 +84,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 flex flex-col bg-white/98 backdrop-blur-xl"
+      className="fixed inset-0 z-50 flex flex-col bg-zinc-950/95 backdrop-blur-xl"
     >
       <div className="flex h-16 items-center justify-end px-4 sm:px-6 lg:px-8">
         <button
           onClick={onClose}
-          className="text-navy-500 transition-colors hover:text-navy-900"
+          className="text-zinc-400 transition-colors hover:text-zinc-50"
           aria-label="Close menu"
         >
           <X className="h-6 w-6" />
@@ -105,7 +105,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             key={key}
             href={href}
             onClick={onClose}
-            className="text-2xl font-semibold text-navy-900 transition-colors hover:text-primary-600"
+            className="text-2xl font-semibold text-zinc-50 transition-colors hover:text-green-400"
           >
             {t(key)}
           </Link>
@@ -121,8 +121,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               className={cn(
                 "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
                 loc === locale
-                  ? "bg-primary-50 text-primary-700"
-                  : "text-navy-500 hover:text-navy-800",
+                  ? "bg-green-500/10 text-green-400"
+                  : "text-zinc-400 hover:text-zinc-200",
               )}
             >
               {localeNames[loc]}
@@ -133,7 +133,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <Link
           href="/get-started"
           onClick={onClose}
-          className="rounded-xl bg-primary-500 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+          className="rounded-xl bg-green-500 px-8 py-3 text-sm font-semibold text-zinc-950 transition-colors hover:bg-green-400"
         >
           {t("getStarted")}
         </Link>

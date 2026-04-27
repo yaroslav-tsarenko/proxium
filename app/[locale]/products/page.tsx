@@ -11,9 +11,9 @@ const products = [
   {
     key: "datacenter" as const,
     icon: Server,
-    iconColor: "text-blue-500",
-    iconBg: "bg-blue-50",
-    accent: "border-blue-100 hover:border-blue-200",
+    iconColor: "text-blue-400",
+    iconBg: "bg-blue-500/10",
+    accent: "border-zinc-800 hover:border-blue-500/30",
     features: [
       "High-speed proxy connections",
       "Shared and dedicated options",
@@ -25,9 +25,9 @@ const products = [
   {
     key: "residential" as const,
     icon: Globe,
-    iconColor: "text-primary-600",
-    iconBg: "bg-primary-50",
-    accent: "border-primary-100 hover:border-primary-200",
+    iconColor: "text-green-400",
+    iconBg: "bg-green-500/10",
+    accent: "border-zinc-800 hover:border-green-500/30",
     features: [
       "Real residential IP addresses",
       "Persistent sessions available",
@@ -39,9 +39,9 @@ const products = [
   {
     key: "rotating" as const,
     icon: RefreshCw,
-    iconColor: "text-emerald-500",
-    iconBg: "bg-emerald-50",
-    accent: "border-emerald-100 hover:border-emerald-200",
+    iconColor: "text-cyan-400",
+    iconBg: "bg-cyan-500/10",
+    accent: "border-zinc-800 hover:border-cyan-500/30",
     features: [
       "Automatic IP rotation",
       "New IP per request or interval",
@@ -53,9 +53,9 @@ const products = [
   {
     key: "dedicated" as const,
     icon: Shield,
-    iconColor: "text-orange-500",
-    iconBg: "bg-orange-50",
-    accent: "border-orange-100 hover:border-orange-200",
+    iconColor: "text-violet-400",
+    iconBg: "bg-violet-500/10",
+    accent: "border-zinc-800 hover:border-violet-500/30",
     features: [
       "Exclusive IPs for your account",
       "Maximum control and reliability",
@@ -71,17 +71,17 @@ export default function ProductsPage() {
 
   return (
     <>
-      <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white">
+      <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 bg-zinc-950">
         <Container>
           <ScrollReveal>
             <div className="flex flex-col items-center text-center">
-              <span className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
+              <span className="inline-flex items-center bg-green-500/10 text-green-400 border border-green-500/20 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
                 {t("sectionTag")}
               </span>
-              <h1 className="text-navy-900 text-4xl lg:text-5xl font-bold tracking-tight mt-4">
+              <h1 className="text-zinc-50 text-4xl lg:text-5xl font-bold tracking-tight mt-4">
                 {t("title")}
               </h1>
-              <p className="text-navy-500 text-lg mt-4 max-w-2xl">
+              <p className="text-zinc-400 text-lg mt-4 max-w-2xl">
                 {t("subtitle")}
               </p>
             </div>
@@ -94,20 +94,20 @@ export default function ProductsPage() {
               return (
                 <div
                   key={product.key}
-                  className={`bg-white border-2 ${product.accent} rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
+                  className={`bg-zinc-900 border ${product.accent} rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-xl ${product.iconBg} flex items-center justify-center shrink-0`}>
                       <Icon className={`w-6 h-6 ${product.iconColor}`} />
                     </div>
                     <div>
-                      <h2 className="text-navy-900 text-xl font-bold">
+                      <h2 className="text-zinc-50 text-xl font-bold">
                         {t(`${product.key}.title`)}
                       </h2>
                     </div>
                   </div>
 
-                  <p className="text-navy-500 text-sm mt-4 leading-relaxed">
+                  <p className="text-zinc-400 text-sm mt-4 leading-relaxed">
                     {t(`${product.key}.description`)}
                   </p>
 
@@ -115,9 +115,9 @@ export default function ProductsPage() {
                     {product.features.map((feat) => (
                       <li
                         key={feat}
-                        className="flex items-center gap-2 text-navy-600 text-sm"
+                        className="flex items-center gap-2 text-zinc-300 text-sm"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
                         {feat}
                       </li>
                     ))}
@@ -126,7 +126,7 @@ export default function ProductsPage() {
                   <div className="mt-6">
                     <Link
                       href="/get-started"
-                      className="inline-flex items-center gap-1 text-primary-600 text-sm font-semibold hover:text-primary-700 transition-colors"
+                      className="inline-flex items-center gap-1 text-green-400 text-sm font-semibold hover:text-green-300 transition-colors"
                     >
                       Buy with Balance <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -138,23 +138,26 @@ export default function ProductsPage() {
         </Container>
       </section>
 
-      <section className="py-20 lg:py-28 bg-surface-1">
+      <section className="py-20 lg:py-28 bg-zinc-900/30">
         <Container>
           <ScrollReveal>
-            <div className="bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl max-w-5xl mx-auto p-12 lg:p-16 text-center">
-              <h2 className="text-white text-3xl lg:text-4xl font-bold">
-                Not sure which proxy to choose?
-              </h2>
-              <p className="text-navy-300 text-lg mt-4 max-w-2xl mx-auto">
-                Contact our team and we&apos;ll help you find the right proxy type for your use case.
-              </p>
-              <div className="mt-8">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary-500 text-white font-semibold text-base hover:bg-primary-400 transition-colors"
-                >
-                  Contact Support
-                </Link>
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl max-w-5xl mx-auto p-12 lg:p-16 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-cyan-500/5 pointer-events-none" />
+              <div className="relative z-10">
+                <h2 className="text-zinc-50 text-3xl lg:text-4xl font-bold">
+                  Not sure which proxy to choose?
+                </h2>
+                <p className="text-zinc-400 text-lg mt-4 max-w-2xl mx-auto">
+                  Contact our team and we&apos;ll help you find the right proxy type for your use case.
+                </p>
+                <div className="mt-8">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-green-500 text-zinc-950 font-semibold text-base hover:bg-green-400 transition-colors shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+                  >
+                    Contact Support
+                  </Link>
+                </div>
               </div>
             </div>
           </ScrollReveal>

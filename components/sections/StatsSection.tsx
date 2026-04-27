@@ -10,10 +10,10 @@ import { Globe, Layers, Shield, Headphones } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const statItems = [
-  { key: "locations", icon: Globe, color: "text-primary-500" },
-  { key: "types", icon: Layers, color: "text-blue-500" },
-  { key: "uptime", icon: Shield, color: "text-emerald-500" },
-  { key: "support", icon: Headphones, color: "text-orange-500" },
+  { key: "locations", icon: Globe, color: "text-green-400" },
+  { key: "types", icon: Layers, color: "text-blue-400" },
+  { key: "uptime", icon: Shield, color: "text-cyan-400" },
+  { key: "support", icon: Headphones, color: "text-violet-400" },
 ];
 
 export default function StatsSection() {
@@ -47,7 +47,7 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-12 lg:py-16 bg-surface-1 border-y border-navy-100">
+    <section ref={sectionRef} className="py-12 lg:py-16 bg-zinc-900/50 border-y border-zinc-800/50">
       <Container>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {statItems.map((item, i) => {
@@ -61,10 +61,10 @@ export default function StatsSection() {
                 className="flex flex-col items-center justify-center py-4 opacity-0"
               >
                 <Icon className={`w-6 h-6 ${item.color} mb-2`} />
-                <p className="text-navy-900 text-3xl lg:text-4xl font-bold">
+                <p className="text-zinc-50 text-3xl lg:text-4xl font-bold">
                   {t(`${item.key}.value`)}
                 </p>
-                <p className="text-navy-500 text-sm mt-1 font-medium">
+                <p className="text-zinc-400 text-sm mt-1 font-medium">
                   {t(`${item.key}.label`)}
                 </p>
               </div>
