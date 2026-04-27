@@ -4,10 +4,11 @@ import { useTranslations } from "next-intl";
 import {
   Search,
   TrendingUp,
-  Eye,
+  Shield,
   Users,
   ShoppingCart,
   BarChart2,
+  Eye,
   ArrowRight,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -19,80 +20,93 @@ const useCases = [
   {
     key: "scraping",
     icon: Search,
-    iconColor: "text-green-400",
-    iconBg: "bg-green-500/10",
+    iconColor: "text-primary-600",
+    iconBg: "bg-primary-50",
     details: [
-      "Bypass anti-bot protections with real residential IPs",
-      "Auto-rotate IPs to avoid rate limits",
-      "Target specific geos for localized data",
-      "Support for headless browsers and Puppeteer",
+      "Collect public data at scale from websites",
+      "Auto-rotate IPs to reduce blocking",
+      "Target specific countries for localized data",
+      "Compatible with popular scraping tools",
     ],
-    recommended: "Residential Proxies",
-  },
-  {
-    key: "seo",
-    icon: TrendingUp,
-    iconColor: "text-cyan-400",
-    iconBg: "bg-cyan-500/10",
-    details: [
-      "Check SERP rankings from any country or city",
-      "Monitor local pack and featured snippets",
-      "Track competitor keywords at scale",
-      "Accurate geo-specific results",
-    ],
-    recommended: "Residential Proxies",
-  },
-  {
-    key: "adVerification",
-    icon: Eye,
-    iconColor: "text-violet-400",
-    iconBg: "bg-violet-500/10",
-    details: [
-      "Verify ad placements across regions",
-      "Detect ad fraud and malicious redirects",
-      "View ads as real users in any market",
-      "Automated compliance checking",
-    ],
-    recommended: "Mobile Proxies",
+    recommended: "Rotating Residential",
   },
   {
     key: "socialMedia",
     icon: Users,
-    iconColor: "text-blue-400",
-    iconBg: "bg-blue-500/10",
+    iconColor: "text-blue-500",
+    iconBg: "bg-blue-50",
     details: [
-      "Manage multiple accounts without bans",
-      "Each account gets a unique IP identity",
-      "ISP proxies for persistent sessions",
-      "Safe automation for posting and engagement",
+      "Manage multiple accounts safely",
+      "Each account gets a unique IP",
+      "Persistent sessions for consistent identity",
+      "Reduce risk of platform restrictions",
     ],
-    recommended: "ISP Proxies",
+    recommended: "Static Residential",
   },
   {
     key: "ecommerce",
     icon: ShoppingCart,
-    iconColor: "text-amber-400",
-    iconBg: "bg-amber-500/10",
+    iconColor: "text-emerald-500",
+    iconBg: "bg-emerald-50",
     details: [
-      "Monitor competitor pricing in real-time",
-      "Track inventory and stock levels",
-      "Collect product data across marketplaces",
-      "Region-specific pricing intelligence",
+      "Monitor competitor pricing across regions",
+      "Track inventory and availability",
+      "Collect product data from marketplaces",
+      "Fast datacenter proxies for high volume",
     ],
-    recommended: "Datacenter Proxies",
+    recommended: "Datacenter",
+  },
+  {
+    key: "seo",
+    icon: TrendingUp,
+    iconColor: "text-orange-500",
+    iconBg: "bg-orange-50",
+    details: [
+      "Check search rankings from any location",
+      "Monitor local results and featured snippets",
+      "Track competitor keywords",
+      "Accurate geo-specific results",
+    ],
+    recommended: "Rotating Residential",
+  },
+  {
+    key: "antiFraud",
+    icon: Shield,
+    iconColor: "text-red-500",
+    iconBg: "bg-red-50",
+    details: [
+      "Verify ad placements across regions",
+      "Detect fraud and malicious redirects",
+      "Check content compliance globally",
+      "Clean IPs for accurate verification",
+    ],
+    recommended: "Dedicated",
   },
   {
     key: "market",
     icon: BarChart2,
-    iconColor: "text-rose-400",
-    iconBg: "bg-rose-500/10",
+    iconColor: "text-blue-500",
+    iconBg: "bg-blue-50",
     details: [
       "Access geo-restricted content worldwide",
-      "Collect sentiment data from local sources",
+      "Gather competitive intelligence",
       "Monitor news and reviews by region",
-      "Competitive intelligence at scale",
+      "Collect market data at scale",
     ],
-    recommended: "Residential Proxies",
+    recommended: "Static Residential",
+  },
+  {
+    key: "reputation",
+    icon: Eye,
+    iconColor: "text-primary-600",
+    iconBg: "bg-primary-50",
+    details: [
+      "Monitor brand mentions across regions",
+      "Track reviews and sentiment",
+      "Stay informed about public perception",
+      "Reliable coverage across geographies",
+    ],
+    recommended: "Rotating Residential",
   },
 ] as const;
 
@@ -101,19 +115,18 @@ export default function UseCasesPage() {
 
   return (
     <>
-      <section className="py-24 lg:py-32 bg-zinc-950">
+      <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white">
         <Container>
           <ScrollReveal>
             <div className="flex flex-col items-center text-center">
-              <span className="inline-flex items-center bg-green-500/10 text-green-400 border border-green-500/20 rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] font-semibold">
-                &#9670; {t("sectionTag")}
+              <span className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
+                {t("sectionTag")}
               </span>
-              <h1 className="text-zinc-50 text-4xl lg:text-5xl font-bold tracking-tight mt-4">
+              <h1 className="text-navy-900 text-4xl lg:text-5xl font-bold tracking-tight mt-4">
                 {t("title")}
               </h1>
-              <p className="text-zinc-400 text-lg mt-4 max-w-2xl">
-                Discover how teams use Proxium to power their workflows across
-                industries.
+              <p className="text-navy-500 text-lg mt-4 max-w-2xl">
+                {t("subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -125,48 +138,48 @@ export default function UseCasesPage() {
               return (
                 <div
                   key={useCase.key}
-                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-8 hover:border-zinc-700 transition-colors"
+                  className="bg-white border border-navy-100 rounded-2xl p-8 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
                     <div
-                      className={`w-12 h-12 rounded-lg ${useCase.iconBg} flex items-center justify-center`}
+                      className={`w-12 h-12 rounded-xl ${useCase.iconBg} flex items-center justify-center`}
                     >
                       <Icon className={`w-6 h-6 ${useCase.iconColor}`} />
                     </div>
                     <div>
-                      <h2 className="text-zinc-50 text-xl font-semibold">
+                      <h2 className="text-navy-900 text-xl font-bold">
                         {t(`items.${useCase.key}.title`)}
                       </h2>
-                      <p className="text-zinc-400 text-sm">
+                      <p className="text-navy-500 text-sm">
                         {t(`items.${useCase.key}.description`)}
                       </p>
                     </div>
                   </div>
 
-                  <ul className="mt-6 space-y-2">
+                  <ul className="mt-5 space-y-2">
                     {useCase.details.map((detail) => (
                       <li
                         key={detail}
-                        className="flex items-start gap-2 text-zinc-300 text-sm"
+                        className="flex items-start gap-2 text-navy-600 text-sm"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0 mt-1.5" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0 mt-1.5" />
                         {detail}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-6 pt-4 border-t border-zinc-800 flex items-center justify-between">
-                    <span className="text-zinc-500 text-xs">
-                      Recommended:{" "}
-                      <span className="text-green-400">
+                  <div className="mt-5 pt-4 border-t border-navy-100 flex items-center justify-between">
+                    <span className="text-navy-400 text-xs">
+                      Best proxy:{" "}
+                      <span className="text-primary-600 font-medium">
                         {useCase.recommended}
                       </span>
                     </span>
                     <Link
                       href="/products"
-                      className="inline-flex items-center gap-1 text-zinc-400 text-sm hover:text-zinc-200 transition-colors"
+                      className="inline-flex items-center gap-1 text-primary-600 text-sm font-medium hover:text-primary-700 transition-colors"
                     >
-                      View product <ArrowRight className="w-3 h-3" />
+                      Browse proxies <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </div>
@@ -176,22 +189,20 @@ export default function UseCasesPage() {
         </Container>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 lg:py-32 bg-zinc-900/50">
+      <section className="py-20 lg:py-28 bg-surface-1">
         <Container>
           <ScrollReveal>
-            <div className="bg-gradient-to-r from-green-600/20 via-cyan-600/10 to-violet-600/10 border border-zinc-800 rounded-3xl max-w-5xl mx-auto p-12 lg:p-16 text-center">
-              <h2 className="text-zinc-50 text-3xl lg:text-4xl font-bold">
+            <div className="bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl max-w-5xl mx-auto p-12 lg:p-16 text-center">
+              <h2 className="text-white text-3xl lg:text-4xl font-bold">
                 Have a different use case?
               </h2>
-              <p className="text-zinc-400 text-lg mt-4 max-w-2xl mx-auto">
-                Our team can help you design a custom proxy solution for any
-                workflow.
+              <p className="text-navy-300 text-lg mt-4 max-w-2xl mx-auto">
+                Contact our team and we&apos;ll help you find the right proxy solution.
               </p>
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-green-500 text-zinc-950 font-semibold text-base hover:bg-green-400 transition-colors shadow-[0_0_30px_rgba(34,197,94,0.3)]"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary-500 text-white font-semibold text-base hover:bg-primary-400 transition-colors"
                 >
                   Talk to Us
                 </Link>

@@ -1,41 +1,40 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Globe, Server, Smartphone, Wifi } from "lucide-react";
+import { Server, Globe, RefreshCw, Shield } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/layout/Container";
-import GlowCard from "@/components/custom/GlowCard";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import StaggerChildren from "@/components/animations/StaggerChildren";
 
 const products = [
   {
-    key: "residential" as const,
-    icon: Globe,
-    glowColor: "rgba(34,197,94,0.15)",
-    iconBg: "text-green-400",
-    hasBadge: true,
-  },
-  {
     key: "datacenter" as const,
     icon: Server,
-    glowColor: "rgba(6,182,212,0.15)",
-    iconBg: "text-cyan-400",
-    hasBadge: false,
+    iconColor: "text-blue-500",
+    iconBg: "bg-blue-50",
+    accent: "border-blue-100 hover:border-blue-200",
   },
   {
-    key: "mobile" as const,
-    icon: Smartphone,
-    glowColor: "rgba(139,92,246,0.15)",
-    iconBg: "text-violet-400",
-    hasBadge: true,
+    key: "residential" as const,
+    icon: Globe,
+    iconColor: "text-primary-600",
+    iconBg: "bg-primary-50",
+    accent: "border-primary-100 hover:border-primary-200",
   },
   {
-    key: "isp" as const,
-    icon: Wifi,
-    glowColor: "rgba(59,130,246,0.15)",
-    iconBg: "text-blue-400",
-    hasBadge: false,
+    key: "rotating" as const,
+    icon: RefreshCw,
+    iconColor: "text-emerald-500",
+    iconBg: "bg-emerald-50",
+    accent: "border-emerald-100 hover:border-emerald-200",
+  },
+  {
+    key: "dedicated" as const,
+    icon: Shield,
+    iconColor: "text-orange-500",
+    iconBg: "bg-orange-50",
+    accent: "border-orange-100 hover:border-orange-200",
   },
 ];
 
@@ -43,58 +42,77 @@ export default function ProductsGrid() {
   const t = useTranslations("products");
 
   return (
-    <section className="py-24 lg:py-32 bg-zinc-950">
+    <section className="py-20 lg:py-28 bg-white">
       <Container>
         <ScrollReveal>
           <div className="flex flex-col items-center text-center">
-            <span className="inline-flex items-center bg-green-500/10 text-green-400 border border-green-500/20 rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] font-semibold">
-              &#9670; {t("sectionTag")}
+            <span className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
+              {t("sectionTag")}
             </span>
-            <h2 className="text-zinc-50 text-3xl lg:text-4xl font-bold tracking-tight mt-4">
+            <h2 className="text-navy-900 text-3xl lg:text-4xl font-bold tracking-tight mt-4">
               {t("title")}
             </h2>
-            <p className="text-zinc-400 text-lg mt-4 max-w-2xl">
+            <p className="text-navy-500 text-lg mt-4 max-w-2xl">
               {t("subtitle")}
             </p>
           </div>
         </ScrollReveal>
 
-        <StaggerChildren className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+        <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {products.map((product) => {
             const Icon = product.icon;
+            const bestFor = t.raw(`${product.key}.bestFor`) as string[];
 
             return (
-              <GlowCard key={product.key} glowColor={product.glowColor}>
+              <div
+                key={product.key}
+                className={`bg-white border-2 ${product.accent} rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
+              >
                 <div className="flex items-start justify-between">
-                  <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center">
-                    <Icon className={`w-5 h-5 ${product.iconBg}`} />
+                  <div className={`w-12 h-12 rounded-xl ${product.iconBg} flex items-center justify-center`}>
+                    <Icon className={`w-6 h-6 ${product.iconColor}`} />
                   </div>
-                  {product.hasBadge && (
-                    <span className="inline-flex items-center bg-green-500/10 text-green-400 border border-green-500/20 rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold">
-                      {t(`${product.key}.badge`)}
-                    </span>
-                  )}
+                  {(() => {
+                    try {
+                      const badge = t(`${product.key}.badge`);
+                      return badge ? (
+                        <span className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-3 py-1 text-xs font-semibold">
+                          {badge}
+                        </span>
+                      ) : null;
+                    } catch {
+                      return null;
+                    }
+                  })()}
                 </div>
 
-                <h3 className="text-zinc-50 text-xl font-semibold mt-4">
+                <h3 className="text-navy-900 text-xl font-bold mt-5">
                   {t(`${product.key}.title`)}
                 </h3>
-                <p className="text-zinc-400 text-sm mt-3">
+                <p className="text-navy-500 text-sm mt-3 leading-relaxed">
                   {t(`${product.key}.description`)}
                 </p>
 
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-green-400 text-sm font-medium">
-                    {t(`${product.key}.startingAt`)}
-                  </span>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {bestFor.map((tag: string) => (
+                    <span
+                      key={tag}
+                      className="bg-navy-50 text-navy-600 text-xs font-medium px-2.5 py-1 rounded-lg"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-6">
                   <Link
-                    href="/products"
-                    className="text-zinc-400 text-sm hover:text-zinc-200 transition-colors"
+                    href="/get-started"
+                    className="inline-flex items-center text-primary-600 text-sm font-semibold hover:text-primary-700 transition-colors"
                   >
-                    Learn more &rarr;
+                    {t(`${product.key}.cta`)} &rarr;
                   </Link>
                 </div>
-              </GlowCard>
+              </div>
             );
           })}
         </StaggerChildren>

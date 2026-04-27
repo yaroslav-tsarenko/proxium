@@ -5,11 +5,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/layout/Container";
-import AnimatedCounter from "@/components/custom/AnimatedCounter";
+import { Globe, Layers, Shield, Headphones } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const statKeys = ["ips", "countries", "uptime", "response"] as const;
+const statItems = [
+  { key: "locations", icon: Globe, color: "text-primary-500" },
+  { key: "types", icon: Layers, color: "text-blue-500" },
+  { key: "uptime", icon: Shield, color: "text-emerald-500" },
+  { key: "support", icon: Headphones, color: "text-orange-500" },
+];
 
 export default function StatsSection() {
   const t = useTranslations("stats");
@@ -22,12 +27,12 @@ export default function StatsSection() {
 
       gsap.fromTo(
         items,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
-          stagger: 0.12,
+          duration: 0.6,
+          stagger: 0.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -42,31 +47,29 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-zinc-900/50 border-y border-zinc-800/50 py-12 lg:py-16"
-    >
+    <section ref={sectionRef} className="py-12 lg:py-16 bg-surface-1 border-y border-navy-100">
       <Container>
-        <div className="grid grid-cols-2 lg:grid-cols-4">
-          {statKeys.map((key, i) => (
-            <div
-              key={key}
-              ref={(el) => {
-                itemRefs.current[i] = el;
-              }}
-              className={`flex flex-col items-center justify-center py-6 opacity-0 ${
-                i < statKeys.length - 1
-                  ? "border-r border-zinc-800"
-                  : ""
-              }`}
-            >
-              <AnimatedCounter
-                value={t(`${key}.value`)}
-                label={t(`${key}.label`)}
-                className="[&>div:first-child]:text-4xl [&>div:first-child]:lg:text-5xl [&>p]:text-xs [&>p]:uppercase [&>p]:tracking-[0.15em] [&>p]:mt-1 [&>p]:text-zinc-500"
-              />
-            </div>
-          ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {statItems.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.key}
+                ref={(el) => {
+                  itemRefs.current[i] = el;
+                }}
+                className="flex flex-col items-center justify-center py-4 opacity-0"
+              >
+                <Icon className={`w-6 h-6 ${item.color} mb-2`} />
+                <p className="text-navy-900 text-3xl lg:text-4xl font-bold">
+                  {t(`${item.key}.value`)}
+                </p>
+                <p className="text-navy-500 text-sm mt-1 font-medium">
+                  {t(`${item.key}.label`)}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>

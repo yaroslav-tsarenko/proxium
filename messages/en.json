@@ -1,180 +1,264 @@
 {
   "metadata": {
-    "title": "Proxium — Premium Proxy Infrastructure",
-    "description": "Enterprise-grade residential, datacenter, mobile & ISP proxies. 85M+ IPs across 195+ countries. Built for developers, trusted by teams."
+    "title": "Proxium — Reliable Proxy Service for Business & Automation",
+    "description": "Buy datacenter, residential, and rotating proxies with a simple balance-based model. Top up your account and choose exactly the proxies you need."
   },
   "nav": {
     "products": "Products",
-    "pricing": "Pricing",
+    "proxyTypes": "Proxy Types",
+    "locations": "Locations",
     "useCases": "Use Cases",
-    "docs": "Docs",
-    "blog": "Blog",
-    "contact": "Contact",
+    "howItWorks": "How It Works",
+    "topUp": "Top Up",
     "signIn": "Sign In",
     "getStarted": "Get Started"
   },
   "hero": {
-    "badge": "Now with 85M+ residential IPs",
-    "titleLine1": "Proxy infrastructure",
-    "titleLine2": "for the modern web",
-    "subtitle": "Residential, datacenter, mobile & ISP proxies with 99.9% uptime and sub-second response times. One API, 195+ countries, unlimited scale.",
-    "cta": "Start Free Trial",
-    "ctaSecondary": "View Docs",
-    "terminal": {
-      "comment": "# Quick start with Proxium API",
-      "line1": "curl -x proxy.proxium.io:7777 \\",
-      "line2": "  -U \"user:pass\" \\",
-      "line3": "  https://httpbin.org/ip",
-      "response": "{ \"origin\": \"185.xxx.xxx.42\" }"
+    "badge": "Balance-based proxy purchasing",
+    "titleLine1": "Reliable proxies for",
+    "titleLine2": "business & automation",
+    "subtitle": "Top up your balance and buy exactly the proxies you need. Datacenter, residential, rotating, and dedicated proxies with global coverage. No subscriptions, no commitments.",
+    "cta": "Top Up Balance",
+    "ctaSecondary": "Browse Proxies",
+    "ctaTertiary": "How It Works",
+    "benefits": {
+      "instant": "Instant access after purchase",
+      "countries": "Country-level selection",
+      "flexible": "Flexible balance spending",
+      "noSubs": "No unnecessary subscriptions"
+    },
+    "cards": {
+      "countries": { "value": "50+", "label": "Available Countries" },
+      "reliability": { "value": "99.5%", "label": "Success Rate" },
+      "types": { "value": "6+", "label": "Proxy Types" },
+      "support": { "label": "24/7 Support" },
+      "analytics": { "label": "Usage Tracking" },
+      "custom": { "label": "Customizable Options" }
     }
+  },
+  "trust": {
+    "label": "Trusted by businesses worldwide",
+    "companies": ["TechFlow", "DataSync", "CloudNet", "WebScale", "NetPrime", "InfoBase"]
   },
   "stats": {
-    "ips": { "value": "85M+", "label": "Residential IPs" },
-    "countries": { "value": "195+", "label": "Countries" },
-    "uptime": { "value": "99.9%", "label": "Uptime SLA" },
-    "response": { "value": "<0.6s", "label": "Avg Response" }
+    "locations": { "value": "50+", "label": "Global Locations" },
+    "types": { "value": "6+", "label": "Proxy Types" },
+    "uptime": { "value": "99.5%", "label": "Reliability" },
+    "support": { "value": "24/7", "label": "Support" }
   },
   "products": {
-    "sectionTag": "Products",
-    "title": "The right proxy for every task",
-    "subtitle": "Four proxy types engineered for different workloads. Mix and match as needed.",
-    "residential": {
-      "title": "Residential Proxies",
-      "description": "85M+ real-user IPs from ISPs worldwide. Highest anonymity, lowest block rates. Perfect for scraping, ad verification, and market research.",
-      "badge": "Most Popular",
-      "startingAt": "From $2.80/GB"
-    },
+    "sectionTag": "Proxy Solutions",
+    "title": "Choose the right proxy for your needs",
+    "subtitle": "Multiple proxy types available for purchase with your account balance. Pick the one that fits your use case.",
     "datacenter": {
       "title": "Datacenter Proxies",
-      "description": "500K+ high-speed IPs from global data centers. Maximum throughput for bulk operations. Shared or dedicated options.",
-      "startingAt": "From $0.80/IP"
+      "description": "High-speed proxies from global data centers. Best for bulk operations, fast scraping, and high-throughput tasks where speed matters most.",
+      "badge": "Best Value",
+      "bestFor": ["Web scraping", "Bulk operations", "Speed-critical tasks"],
+      "cta": "Buy with Balance"
     },
-    "mobile": {
-      "title": "Mobile Proxies",
-      "description": "10M+ 4G/5G IPs from real mobile carriers in 160+ countries. Bypass mobile-first anti-bot systems with genuine device fingerprints.",
-      "badge": "Premium",
-      "startingAt": "From $6.00/GB"
+    "residential": {
+      "title": "Static Residential Proxies",
+      "description": "Real residential IPs that stay the same for the duration of your session. Ideal for account management, social media, and tasks requiring consistent identity.",
+      "bestFor": ["Account management", "Social media", "Long sessions"],
+      "cta": "Buy with Balance"
     },
-    "isp": {
-      "title": "ISP Proxies",
-      "description": "Static residential IPs with datacenter speed. Persistent sessions for account management, social media, and long-running tasks.",
-      "startingAt": "From $2.00/IP"
+    "rotating": {
+      "title": "Rotating Residential Proxies",
+      "description": "Automatically rotating IPs from residential networks. Each request uses a different IP address. Perfect for large-scale data collection.",
+      "badge": "Popular",
+      "bestFor": ["Data collection", "Price monitoring", "SEO research"],
+      "cta": "Buy with Balance"
+    },
+    "dedicated": {
+      "title": "Private / Dedicated Proxies",
+      "description": "Exclusive IP addresses assigned only to your account. Maximum control, reliability, and performance for sensitive operations.",
+      "bestFor": ["E-commerce", "Sensitive tasks", "Full control"],
+      "cta": "Buy with Balance"
     }
+  },
+  "balance": {
+    "sectionTag": "How It Works",
+    "title": "Your balance is your buying power",
+    "subtitle": "No fixed plans. Top up once, buy exactly what you need.",
+    "steps": {
+      "topup": {
+        "step": "1",
+        "title": "Add funds to your account",
+        "description": "Top up your balance using any supported payment method. The exact amount appears in your account instantly."
+      },
+      "choose": {
+        "step": "2",
+        "title": "Choose your proxies",
+        "description": "Select proxy type, country, quantity, and bandwidth or traffic options. See the price before you buy."
+      },
+      "purchase": {
+        "step": "3",
+        "title": "Buy with your balance",
+        "description": "The purchase amount is deducted from your balance. Your proxies are activated immediately."
+      },
+      "manage": {
+        "step": "4",
+        "title": "Track and manage",
+        "description": "View active proxies, monitor usage, check payments, and manage everything from your dashboard."
+      }
+    },
+    "highlight1": "Top up once, buy exactly what you need.",
+    "highlight2": "Only pay for the proxies you choose.",
+    "highlight3": "Your dashboard keeps everything organized."
+  },
+  "locations": {
+    "sectionTag": "Global Network",
+    "title": "Proxy access by country",
+    "subtitle": "Choose from available locations around the world. Select the countries that match your needs.",
+    "countries": [
+      { "name": "United States", "flag": "US", "region": "North America" },
+      { "name": "United Kingdom", "flag": "GB", "region": "Europe" },
+      { "name": "Germany", "flag": "DE", "region": "Europe" },
+      { "name": "France", "flag": "FR", "region": "Europe" },
+      { "name": "Canada", "flag": "CA", "region": "North America" },
+      { "name": "Netherlands", "flag": "NL", "region": "Europe" },
+      { "name": "Spain", "flag": "ES", "region": "Europe" },
+      { "name": "Italy", "flag": "IT", "region": "Europe" },
+      { "name": "Brazil", "flag": "BR", "region": "South America" },
+      { "name": "Japan", "flag": "JP", "region": "Asia" },
+      { "name": "Australia", "flag": "AU", "region": "Oceania" },
+      { "name": "India", "flag": "IN", "region": "Asia" }
+    ],
+    "more": "And many more locations available",
+    "cta": "View All Locations"
   },
   "features": {
-    "sectionTag": "Built for Developers",
-    "title": "Infrastructure that scales",
-    "subtitle": "Everything you need to integrate, monitor, and scale your proxy operations.",
+    "sectionTag": "Platform Features",
+    "title": "Everything you need to manage proxies",
+    "subtitle": "Your dashboard gives you full control over purchased proxies, usage analytics, and account activity.",
     "items": {
-      "api": {
-        "title": "One Unified API",
-        "description": "Single endpoint for all proxy types. RESTful, well-documented, with SDKs for Python, Node.js, Go, and Java."
+      "proxyList": {
+        "title": "Active Proxy List",
+        "description": "View all your purchased proxies in one place. See status, location, type, and expiration at a glance."
       },
-      "rotation": {
-        "title": "Smart Rotation",
-        "description": "Automatic IP rotation with configurable intervals. Sticky sessions up to 30 minutes for stateful workflows."
+      "analytics": {
+        "title": "Usage Analytics",
+        "description": "Track bandwidth consumption, request counts, and success rates across all your proxies in real time."
       },
-      "targeting": {
-        "title": "Geo-Targeting",
-        "description": "Country, state, city, and ASN-level targeting. Target specific carriers for mobile proxies."
+      "balance": {
+        "title": "Balance & Payments",
+        "description": "Monitor your account balance, top-up history, and all proxy purchases with detailed transaction records."
       },
-      "dashboard": {
-        "title": "Real-Time Dashboard",
-        "description": "Monitor bandwidth, success rates, response times, and costs. Set alerts and export reports."
+      "credentials": {
+        "title": "Quick Copy Credentials",
+        "description": "One-click copy for proxy addresses, ports, usernames, and passwords. Integrate in seconds."
       },
-      "protocols": {
-        "title": "HTTP(S) & SOCKS5",
-        "description": "Full protocol support including HTTPS CONNECT and SOCKS5 with authentication."
+      "filters": {
+        "title": "Country Filters",
+        "description": "Filter your proxy list by country, type, or status. Find the right proxy fast."
       },
-      "webhooks": {
-        "title": "Webhooks & Alerts",
-        "description": "Get notified on usage thresholds, errors, or anomalies. Integrate with Slack, Discord, or email."
-      }
-    }
-  },
-  "howItWorks": {
-    "sectionTag": "Getting Started",
-    "title": "Three commands to go live",
-    "steps": {
-      "signup": {
-        "title": "Create Account",
-        "description": "Sign up in 30 seconds. No credit card required for the free trial.",
-        "code": "$ proxium auth login"
-      },
-      "configure": {
-        "title": "Configure",
-        "description": "Choose proxy type, location, rotation. Get your credentials instantly.",
-        "code": "$ proxium config set --type residential --country US"
-      },
-      "deploy": {
-        "title": "Start Routing",
-        "description": "Send your first request. Auto-scaling handles the rest.",
-        "code": "$ curl -x gate.proxium.io:7777 https://target.com"
+      "support": {
+        "title": "Built-in Support",
+        "description": "Access help, submit tickets, and get troubleshooting guidance directly from your dashboard."
       }
     }
   },
   "useCases": {
     "sectionTag": "Use Cases",
-    "title": "Built for your workflow",
+    "title": "Proxies for every scenario",
+    "subtitle": "From data collection to brand protection, find the right proxy setup for your workflow.",
     "items": {
-      "scraping": { "title": "Web Scraping", "description": "Collect data at scale without blocks or CAPTCHAs." },
-      "seo": { "title": "SEO Monitoring", "description": "Track rankings from any location with real user IPs." },
-      "adVerification": { "title": "Ad Verification", "description": "Verify ad placements and detect fraud globally." },
-      "socialMedia": { "title": "Social Media", "description": "Manage multiple accounts safely with unique IPs." },
-      "ecommerce": { "title": "Price Monitoring", "description": "Monitor competitor pricing across regions in real-time." },
-      "market": { "title": "Market Research", "description": "Access geo-restricted content for competitive analysis." }
+      "scraping": {
+        "title": "Web Scraping & Data Collection",
+        "description": "Collect public data at scale. Rotating residential proxies help avoid blocks and ensure reliable access across websites.",
+        "bestProxy": "Rotating Residential"
+      },
+      "socialMedia": {
+        "title": "Social Media Management",
+        "description": "Manage multiple social accounts safely with unique residential IPs. Avoid platform restrictions with consistent identity.",
+        "bestProxy": "Static Residential"
+      },
+      "ecommerce": {
+        "title": "E-commerce & Price Monitoring",
+        "description": "Monitor competitor pricing and product availability across regions. Datacenter proxies offer the speed you need.",
+        "bestProxy": "Datacenter"
+      },
+      "seo": {
+        "title": "SEO Monitoring",
+        "description": "Track search rankings from different locations. See real results as local users would see them.",
+        "bestProxy": "Rotating Residential"
+      },
+      "antiFraud": {
+        "title": "Anti-Fraud & Verification",
+        "description": "Verify ads, check content compliance, and detect fraud across multiple geographies with clean IPs.",
+        "bestProxy": "Dedicated"
+      },
+      "market": {
+        "title": "Market Research",
+        "description": "Access geo-restricted content and gather competitive intelligence across markets without detection.",
+        "bestProxy": "Static Residential"
+      },
+      "reputation": {
+        "title": "Reputation Management",
+        "description": "Monitor brand mentions, reviews, and sentiment across regions. Stay informed with reliable proxy coverage.",
+        "bestProxy": "Rotating Residential"
+      }
     }
   },
-  "pricing": {
-    "sectionTag": "Pricing",
-    "title": "Pay only for what you use",
-    "subtitle": "No hidden fees. No commitments. Scale up or down anytime.",
-    "cta": "See Full Pricing",
-    "plans": {
-      "starter": {
-        "name": "Starter",
-        "price": "$50",
-        "period": "/month",
-        "description": "For individuals and small projects",
-        "features": ["5 GB residential bandwidth", "Shared datacenter IPs", "3 geo-locations", "Email support", "API access"]
+  "dashboard": {
+    "sectionTag": "Dashboard",
+    "title": "Your proxy command center",
+    "subtitle": "Everything you need to manage, monitor, and optimize your proxy usage in one place.",
+    "features": [
+      "Active proxy list with status indicators",
+      "Real-time usage and bandwidth analytics",
+      "Balance history and payment records",
+      "Country and type filters",
+      "One-click credential copy",
+      "Renewal and expiration tracking",
+      "Support ticket access",
+      "Minimal API access for proxy list and account data"
+    ]
+  },
+  "support": {
+    "sectionTag": "Support",
+    "title": "We're here when you need us",
+    "subtitle": "Get help with setup, troubleshooting, or account questions. Our team supports you at every step.",
+    "items": {
+      "dedicated": {
+        "title": "Dedicated Support",
+        "description": "Our support team helps you with proxy setup, connection issues, and account management."
       },
-      "pro": {
-        "name": "Pro",
-        "price": "$249",
-        "period": "/month",
-        "badge": "Most Popular",
-        "description": "For growing teams and businesses",
-        "features": ["50 GB residential bandwidth", "Dedicated datacenter IPs", "All geo-locations", "Priority support", "Advanced dashboard", "Webhooks & alerts", "Team seats (5)"]
+      "helpCenter": {
+        "title": "Help Center & FAQ",
+        "description": "Browse guides, tutorials, and answers to common questions. Get started quickly."
       },
-      "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "",
-        "description": "For large-scale operations",
-        "features": ["Unlimited bandwidth", "Custom IP pools", "Dedicated account manager", "SLA guarantee", "Custom integrations", "On-premise options", "SSO & audit logs"]
+      "setup": {
+        "title": "Quick Setup Guidance",
+        "description": "Step-by-step instructions to configure proxies in your browser, tools, or scripts."
+      },
+      "troubleshooting": {
+        "title": "Troubleshooting",
+        "description": "Connection problems? Authentication errors? Our guides and support team resolve issues fast."
       }
     }
   },
   "testimonials": {
-    "sectionTag": "Testimonials",
-    "title": "Trusted by engineering teams",
+    "sectionTag": "Customer Reviews",
+    "title": "What our customers say",
     "items": [
       {
-        "quote": "Proxium cut our scraping costs by 60% while improving success rates. The API is clean and the rotation logic just works.",
+        "quote": "Proxium's balance model is exactly what we needed. No more paying for plans we don't fully use. We top up and buy what we need, when we need it.",
         "name": "Alex Chen",
-        "role": "CTO, DataFlow Inc.",
+        "role": "Operations Lead, DataSync",
         "avatar": "AC"
       },
       {
-        "quote": "We switched from Bright Data and haven't looked back. Better speeds, better pricing, and the dashboard is actually useful.",
+        "quote": "The proxy quality is excellent and the dashboard makes it easy to track everything. We switched from a subscription-based provider and saved significantly.",
         "name": "Sarah Mitchell",
-        "role": "Lead Engineer, ScaleOps",
+        "role": "Marketing Manager, WebScale",
         "avatar": "SM"
       },
       {
-        "quote": "The geo-targeting accuracy is exceptional. We verify ads in 50+ markets daily with near-zero false positives.",
+        "quote": "Setting up proxies took minutes. The country selection is straightforward and the support team responds quickly when we have questions.",
         "name": "James Rodriguez",
-        "role": "VP Engineering, AdShield",
+        "role": "Research Analyst, NetPrime",
         "avatar": "JR"
       }
     ]
@@ -184,46 +268,60 @@
     "title": "Frequently asked questions",
     "items": {
       "q1": {
-        "question": "What types of proxies does Proxium offer?",
-        "answer": "We offer four types: residential (85M+ IPs), datacenter (500K+ IPs), mobile (10M+ 4G/5G IPs), and ISP (static residential) proxies across 195+ countries."
+        "question": "How does the balance system work?",
+        "answer": "You add funds to your account balance using any supported payment method. The full amount appears in your account. Then you browse available proxies, choose what you need, and purchase using your balance. It's simple — no subscriptions, no recurring charges."
       },
       "q2": {
-        "question": "How fast are the proxies?",
-        "answer": "Our average response time is under 0.6 seconds for residential proxies and under 0.3 seconds for datacenter proxies. We guarantee 99.9% uptime SLA."
+        "question": "What proxy types are available?",
+        "answer": "We offer datacenter proxies, static residential proxies, rotating residential proxies, private/dedicated proxies, and shared proxies. Each type is suited for different use cases, from web scraping to social media management."
       },
       "q3": {
-        "question": "Do you support SOCKS5?",
-        "answer": "Yes. All proxy types support HTTP, HTTPS, and SOCKS5 protocols with username/password or IP whitelisting authentication."
+        "question": "Can I choose proxy locations?",
+        "answer": "Yes. You can select proxies from specific countries and regions. We offer locations across North America, Europe, Asia, South America, and more."
       },
       "q4": {
-        "question": "Can I try before I buy?",
-        "answer": "Absolutely. We offer a free trial with real residential IPs — no credit card required. Start in under 60 seconds."
+        "question": "Is there an API?",
+        "answer": "We provide basic API access for checking your proxy list and account data. This is available inside your dashboard after creating an account. We do not offer extensive public API documentation."
       },
       "q5": {
-        "question": "Are the IPs ethically sourced?",
-        "answer": "Yes. All residential and mobile IPs come from opt-in networks with full user consent. We comply with GDPR and CCPA."
+        "question": "How quickly are proxies activated?",
+        "answer": "Proxies are activated immediately after purchase. Once the amount is deducted from your balance, your proxies are ready to use with credentials available in your dashboard."
+      },
+      "q6": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept major credit and debit cards, and other common payment methods. All transactions are processed securely."
+      },
+      "q7": {
+        "question": "Can I get a refund?",
+        "answer": "Please refer to our refund policy for details. Generally, unused balance can be discussed with our support team on a case-by-case basis."
       }
     }
   },
   "cta": {
-    "title": "Ready to route smarter?",
-    "subtitle": "Start your free trial today. No credit card required.",
-    "button": "Get Started Free",
-    "note": "Free 1GB trial · No credit card · Setup in 60 seconds"
+    "title": "Ready to get started?",
+    "subtitle": "Top up your balance and buy the proxies you need. No subscriptions, no commitments.",
+    "button": "Top Up & Start",
+    "note": "Instant activation after purchase"
   },
   "footer": {
-    "description": "Enterprise-grade proxy infrastructure for the modern web.",
+    "description": "Reliable proxy service for business, automation, and data collection. Buy proxies with a simple balance-based model.",
     "products": "Products",
+    "proxyTypes": "Proxy Types",
+    "useCasesTitle": "Use Cases",
     "resources": "Resources",
     "company": "Company",
     "legal": "Legal",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "acceptable": "Acceptable Use Policy",
-    "newsletter": "Stay updated",
+    "newsletter": "Stay updated with Proxium",
     "emailPlaceholder": "you@company.com",
     "subscribe": "Subscribe",
     "rights": "All rights reserved.",
-    "status": "System Status"
+    "status": "System Status",
+    "helpCenter": "Help Center",
+    "contact": "Contact",
+    "about": "About",
+    "blog": "Blog"
   }
 }

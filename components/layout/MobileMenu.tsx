@@ -10,11 +10,9 @@ import { cn } from "@/lib/utils/cn";
 
 const navLinks = [
   { href: "/products", key: "products" },
-  { href: "/pricing", key: "pricing" },
+  { href: "/locations", key: "locations" },
   { href: "/use-cases", key: "useCases" },
-  { href: "/docs", key: "docs" },
-  { href: "/blog", key: "blog" },
-  { href: "/contact", key: "contact" },
+  { href: "/how-it-works", key: "howItWorks" },
 ] as const;
 
 interface MobileMenuProps {
@@ -70,7 +68,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     };
   }, [isOpen]);
 
-  // Lock body scroll when open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -87,20 +84,18 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 flex flex-col bg-zinc-950/95 backdrop-blur-xl"
+      className="fixed inset-0 z-50 flex flex-col bg-white/98 backdrop-blur-xl"
     >
-      {/* Close button */}
       <div className="flex h-16 items-center justify-end px-4 sm:px-6 lg:px-8">
         <button
           onClick={onClose}
-          className="text-zinc-400 transition-colors hover:text-zinc-50"
+          className="text-navy-500 transition-colors hover:text-navy-900"
           aria-label="Close menu"
         >
           <X className="h-6 w-6" />
         </button>
       </div>
 
-      {/* Nav links */}
       <div
         ref={linksRef}
         className="flex flex-1 flex-col items-center justify-center gap-6"
@@ -110,26 +105,24 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             key={key}
             href={href}
             onClick={onClose}
-            className="text-2xl font-semibold text-zinc-50 transition-colors hover:text-green-400"
+            className="text-2xl font-semibold text-navy-900 transition-colors hover:text-primary-600"
           >
             {t(key)}
           </Link>
         ))}
       </div>
 
-      {/* Bottom section */}
       <div ref={ctaRef} className="flex flex-col items-center gap-6 pb-12">
-        {/* Language switcher */}
         <div className="flex items-center gap-3">
           {locales.map((loc) => (
             <button
               key={loc}
               onClick={() => switchLocale(loc)}
               className={cn(
-                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
                 loc === locale
-                  ? "bg-zinc-800 text-green-400"
-                  : "text-zinc-500 hover:text-zinc-300",
+                  ? "bg-primary-50 text-primary-700"
+                  : "text-navy-500 hover:text-navy-800",
               )}
             >
               {localeNames[loc]}
@@ -137,11 +130,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           ))}
         </div>
 
-        {/* Get Started */}
         <Link
           href="/get-started"
           onClick={onClose}
-          className="rounded-lg bg-green-500 px-8 py-3 text-sm font-semibold text-zinc-950 transition-colors hover:bg-green-400"
+          className="rounded-xl bg-primary-500 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
         >
           {t("getStarted")}
         </Link>

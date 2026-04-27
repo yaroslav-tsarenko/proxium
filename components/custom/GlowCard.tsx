@@ -12,7 +12,7 @@ interface GlowCardProps {
 export default function GlowCard({
   children,
   className,
-  glowColor = "rgba(34,197,94,0.15)",
+  glowColor = "rgba(20,184,166,0.08)",
 }: GlowCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -34,12 +34,11 @@ export default function GlowCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "bg-zinc-900 border border-zinc-800 rounded-2xl p-8 relative overflow-hidden transition-all duration-300",
-        isHovered && "border-zinc-700 -translate-y-1",
+        "bg-white border border-navy-100 rounded-2xl p-8 relative overflow-hidden transition-all duration-300",
+        isHovered && "border-navy-200 -translate-y-1 shadow-lg",
         className,
       )}
     >
-      {/* Glow effect */}
       {isHovered && (
         <div
           className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
@@ -49,7 +48,6 @@ export default function GlowCard({
         />
       )}
 
-      {/* Content */}
       <div className="relative z-10">{children}</div>
     </div>
   );

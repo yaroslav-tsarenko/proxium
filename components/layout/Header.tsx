@@ -12,11 +12,9 @@ import { MobileMenu } from "./MobileMenu";
 
 const navLinks = [
   { href: "/products", key: "products" },
-  { href: "/pricing", key: "pricing" },
+  { href: "/locations", key: "locations" },
   { href: "/use-cases", key: "useCases" },
-  { href: "/docs", key: "docs" },
-  { href: "/blog", key: "blog" },
-  { href: "/contact", key: "contact" },
+  { href: "/how-it-works", key: "howItWorks" },
 ] as const;
 
 export function Header() {
@@ -48,57 +46,55 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-40 h-16 transition-colors duration-300",
+          "fixed inset-x-0 top-0 z-40 h-16 transition-all duration-300",
           scrolled
-            ? "border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl"
+            ? "border-b border-navy-200 bg-white/90 backdrop-blur-xl shadow-sm"
             : "bg-transparent",
         )}
       >
         <Container className="flex h-full items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-1">
-            <span className="text-green-500">●</span>
-            <span className="font-mono text-xl font-extrabold text-zinc-50">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
+              <span className="text-white font-bold text-sm">P</span>
+            </div>
+            <span className="text-xl font-bold text-navy-900">
               Proxium
             </span>
           </Link>
 
-          {/* Center nav — desktop */}
-          <nav className="hidden items-center gap-6 lg:flex">
+          <nav className="hidden items-center gap-8 lg:flex">
             {navLinks.map(({ href, key }) => (
               <Link
                 key={key}
                 href={href}
-                className="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
+                className="text-sm font-medium text-navy-600 transition-colors hover:text-navy-900"
               >
                 {t(key)}
               </Link>
             ))}
           </nav>
 
-          {/* Right side — desktop */}
           <div className="hidden items-center gap-4 lg:flex">
-            {/* Language switcher */}
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
+                className="flex items-center gap-1 text-sm font-medium text-navy-500 transition-colors hover:text-navy-900"
               >
                 {locale.toUpperCase()}
                 <ChevronDown className="h-3.5 w-3.5" />
               </button>
 
               {langOpen && (
-                <div className="absolute right-0 top-full mt-2 min-w-[140px] rounded-lg border border-zinc-800 bg-zinc-900 py-1 shadow-xl">
+                <div className="absolute right-0 top-full mt-2 min-w-[140px] rounded-xl border border-navy-200 bg-white py-1 shadow-lg">
                   {locales.map((loc) => (
                     <button
                       key={loc}
                       onClick={() => switchLocale(loc)}
                       className={cn(
-                        "flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm transition-colors hover:bg-zinc-800",
+                        "flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm transition-colors hover:bg-navy-50",
                         loc === locale
-                          ? "text-green-400"
-                          : "text-zinc-400 hover:text-zinc-50",
+                          ? "text-primary-600 font-medium"
+                          : "text-navy-600",
                       )}
                     >
                       {localeNames[loc]}
@@ -108,27 +104,24 @@ export function Header() {
               )}
             </div>
 
-            {/* Sign In */}
             <Link
               href="/sign-in"
-              className="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
+              className="text-sm font-medium text-navy-600 transition-colors hover:text-navy-900"
             >
               {t("signIn")}
             </Link>
 
-            {/* Get Started */}
             <Link
               href="/get-started"
-              className="rounded-lg bg-green-500 px-5 py-2 text-[13px] font-semibold text-zinc-950 transition-colors hover:bg-green-400"
+              className="rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 shadow-sm"
             >
               {t("getStarted")}
             </Link>
           </div>
 
-          {/* Hamburger — mobile */}
           <button
             onClick={() => setMobileOpen(true)}
-            className="text-zinc-400 transition-colors hover:text-zinc-50 lg:hidden"
+            className="text-navy-600 transition-colors hover:text-navy-900 lg:hidden"
             aria-label="Open menu"
           >
             <Menu className="h-6 w-6" />
