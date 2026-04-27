@@ -47,11 +47,11 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center">
-                <span className="text-zinc-950 font-bold text-sm">P</span>
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <div className="w-7 h-7 rounded-md bg-green-500 flex items-center justify-center shadow-[0_0_12px_rgba(34,197,94,0.4)]">
+                <span className="text-zinc-950 font-extrabold text-xs leading-none">p</span>
               </div>
-              <span className="text-xl font-bold text-zinc-50">Proxium</span>
+              <span className="text-lg font-bold text-zinc-50 tracking-tight">proxium</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-zinc-400 max-w-xs">
               {t("description")}

@@ -22,8 +22,8 @@ interface GlobeSceneProps {
 
 export default function GlobeScene({ className }: GlobeSceneProps) {
   return (
-    <SceneWrapper className={cn("h-[600px] w-full", className)}>
-      <ambientLight intensity={0.5} />
+    <SceneWrapper className={cn("h-[800px] w-full", className)}>
+      <ambientLight intensity={0.7} />
       <NetworkGlobe />
       <DataFlowLines />
     </SceneWrapper>

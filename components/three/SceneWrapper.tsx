@@ -19,7 +19,7 @@ export default function SceneWrapper({
   return (
     <div className={cn("h-full w-full", className)}>
       <Canvas
-        camera={{ position: [0, 0, 5], fov: 45 }}
+        camera={{ position: [0, 0, 7], fov: 45 }}
         dpr={[1, 2]}
         style={{ background: "transparent" }}
         gl={{ antialias: true, alpha: true }}

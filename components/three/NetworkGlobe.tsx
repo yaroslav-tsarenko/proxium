@@ -151,7 +151,7 @@ export default function NetworkGlobe() {
     <group ref={groupRef}>
       {/* Wireframe sphere */}
       <mesh>
-        <sphereGeometry args={[GLOBE_RADIUS, 32, 32]} />
+        <sphereGeometry args={[GLOBE_RADIUS, 64, 64]} />
         <meshBasicMaterial
           color="#22C55E"
           wireframe

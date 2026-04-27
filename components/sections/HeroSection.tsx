@@ -100,7 +100,7 @@ export default function HeroSection() {
           </div>
 
           <div ref={globeRef} className="hidden lg:flex opacity-0 items-center justify-center relative">
-            <div className="aspect-square w-full max-w-[400px] mx-auto">
+            <div className="aspect-square w-full max-w-[600px] mx-auto">
               <GlobeScene className="h-full w-full" />
             </div>
           </div>
