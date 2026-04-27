@@ -57,10 +57,10 @@ export default function HeroSection() {
             </span>
 
             <h1 className="mt-6">
-              <span className="block text-zinc-50 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+              <span className="block text-zinc-50 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1]">
                 {t("titleLine1")}
               </span>
-              <span className="block text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-gradient-multi mt-2">
+              <span className="block text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-gradient-multi mt-2">
                 {t("titleLine2")}
               </span>
             </h1>
@@ -99,8 +99,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div ref={globeRef} className="hidden lg:block opacity-0 relative">
-            <div className="aspect-square w-full max-w-[560px] mx-auto">
+          <div ref={globeRef} className="hidden lg:flex opacity-0 items-center justify-center relative">
+            <div className="aspect-square w-full max-w-[400px] mx-auto">
               <GlobeScene className="h-full w-full" />
             </div>
           </div>
