@@ -53,13 +53,8 @@ export function Header() {
         )}
       >
         <Container className="flex h-full items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-7 h-7 rounded-md bg-green-500 flex items-center justify-center shadow-[0_0_12px_rgba(34,197,94,0.4)] group-hover:shadow-[0_0_18px_rgba(34,197,94,0.5)] transition-shadow">
-              <span className="text-zinc-950 font-extrabold text-xs leading-none">p</span>
-            </div>
-            <span className="text-lg font-bold text-zinc-50 tracking-tight">
-              proxium
-            </span>
+          <Link href="/" className="text-xl font-extrabold text-zinc-50 tracking-tight hover:text-green-400 transition-colors">
+            proxium
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
