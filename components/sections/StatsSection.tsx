@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/translations";
 import { Container } from "@/components/layout/Container";
 import { Globe, Layers, Shield, Headphones } from "lucide-react";
 

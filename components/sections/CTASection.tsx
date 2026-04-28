@@ -1,7 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { useTranslations } from "@/lib/translations";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 

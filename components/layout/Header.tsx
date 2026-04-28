@@ -1,14 +1,16 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useTranslations } from "next-intl";
-import { useLocale } from "next-intl";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, ChevronDown } from "lucide-react";
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { locales, localeNames, type Locale } from "@/i18n/config";
+import { useTranslations } from "@/lib/translations";
+import { useCurrency, type Currency } from "@/lib/currency";
 import { cn } from "@/lib/utils/cn";
 import { Container } from "./Container";
 import { MobileMenu } from "./MobileMenu";
+
+const currencies: Currency[] = ["USD", "EUR", "GBP"];
 
 const navLinks = [
   { href: "/products", key: "products" },
@@ -19,13 +21,12 @@ const navLinks = [
 
 export function Header() {
   const t = useTranslations("nav");
-  const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
+  const { currency, setCurrency } = useCurrency();
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
+  const [currencyOpen, setCurrencyOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -34,13 +35,20 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const switchLocale = useCallback(
-    (next: Locale) => {
-      router.replace(pathname, { locale: next });
-      setLangOpen(false);
+  const selectCurrency = useCallback(
+    (next: Currency) => {
+      setCurrency(next);
+      setCurrencyOpen(false);
     },
-    [pathname, router],
+    [setCurrency],
   );
+
+  useEffect(() => {
+    if (!currencyOpen) return;
+    const close = () => setCurrencyOpen(false);
+    window.addEventListener("click", close);
+    return () => window.removeEventListener("click", close);
+  }, [currencyOpen]);
 
   return (
     <>
@@ -62,7 +70,10 @@ export function Header() {
               <Link
                 key={key}
                 href={href}
-                className="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-zinc-50",
+                  pathname === href ? "text-zinc-50" : "text-zinc-400",
+                )}
               >
                 {t(key)}
               </Link>
@@ -72,27 +83,30 @@ export function Header() {
           <div className="hidden items-center gap-4 lg:flex">
             <div className="relative">
               <button
-                onClick={() => setLangOpen(!langOpen)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrencyOpen(!currencyOpen);
+                }}
                 className="flex items-center gap-1 text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
               >
-                {locale.toUpperCase()}
+                {currency}
                 <ChevronDown className="h-3.5 w-3.5" />
               </button>
 
-              {langOpen && (
-                <div className="absolute right-0 top-full mt-2 min-w-[140px] rounded-xl border border-zinc-800 bg-zinc-900 py-1 shadow-lg">
-                  {locales.map((loc) => (
+              {currencyOpen && (
+                <div className="absolute right-0 top-full mt-2 min-w-[100px] rounded-xl border border-zinc-800 bg-zinc-900 py-1 shadow-lg">
+                  {currencies.map((c) => (
                     <button
-                      key={loc}
-                      onClick={() => switchLocale(loc)}
+                      key={c}
+                      onClick={() => selectCurrency(c)}
                       className={cn(
                         "flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm transition-colors hover:bg-zinc-800",
-                        loc === locale
+                        c === currency
                           ? "text-green-400 font-medium"
                           : "text-zinc-400",
                       )}
                     >
-                      {localeNames[loc]}
+                      {c}
                     </button>
                   ))}
                 </div>

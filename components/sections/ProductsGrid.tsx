@@ -1,8 +1,8 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/translations";
 import { Server, Globe, RefreshCw, Shield } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import StaggerChildren from "@/components/animations/StaggerChildren";

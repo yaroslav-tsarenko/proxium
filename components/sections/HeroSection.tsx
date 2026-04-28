@@ -3,8 +3,8 @@
 import { useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import gsap from "gsap";
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { useTranslations } from "@/lib/translations";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { CheckCircle } from "lucide-react";
 

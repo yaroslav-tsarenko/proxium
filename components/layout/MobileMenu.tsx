@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { X } from "lucide-react";
 import gsap from "gsap";
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { locales, localeNames, type Locale } from "@/i18n/config";
+import { useTranslations } from "@/lib/translations";
+import { useCurrency, type Currency } from "@/lib/currency";
 import { cn } from "@/lib/utils/cn";
+
+const currencies: Currency[] = ["USD", "EUR", "GBP"];
 
 const navLinks = [
   { href: "/products", key: "products" },
@@ -22,21 +24,11 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const t = useTranslations("nav");
-  const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
+  const { currency, setCurrency } = useCurrency();
 
   const overlayRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-
-  const switchLocale = useCallback(
-    (next: Locale) => {
-      router.replace(pathname, { locale: next });
-      onClose();
-    },
-    [pathname, router, onClose],
-  );
 
   useEffect(() => {
     if (!isOpen) return;
@@ -114,18 +106,18 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
       <div ref={ctaRef} className="flex flex-col items-center gap-6 pb-12">
         <div className="flex items-center gap-3">
-          {locales.map((loc) => (
+          {currencies.map((c) => (
             <button
-              key={loc}
-              onClick={() => switchLocale(loc)}
+              key={c}
+              onClick={() => setCurrency(c)}
               className={cn(
                 "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
-                loc === locale
+                c === currency
                   ? "bg-green-500/10 text-green-400"
                   : "text-zinc-400 hover:text-zinc-200",
               )}
             >
-              {localeNames[loc]}
+              {c}
             </button>
           ))}
         </div>

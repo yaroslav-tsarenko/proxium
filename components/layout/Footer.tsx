@@ -1,30 +1,24 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { useTranslations } from "@/lib/translations";
 import { Container } from "./Container";
 
 const productLinks = [
-  { href: "/products", label: "Datacenter Proxies" },
-  { href: "/products", label: "Static Residential Proxies" },
+  { href: "/products/datacenter", label: "Datacenter Proxies" },
+  { href: "/products/residential", label: "Static Residential Proxies" },
   { href: "/products", label: "Rotating Residential Proxies" },
   { href: "/products", label: "Private / Dedicated Proxies" },
 ] as const;
 
-const proxyTypeLinks = [
-  { href: "/products", label: "Shared Proxies" },
-  { href: "/products", label: "Country-based Proxies" },
-  { href: "/products", label: "Social Media Proxies" },
-  { href: "/products", label: "SEO Proxies" },
-] as const;
-
 const useCaseLinks = [
-  { href: "/use-cases", label: "Web Scraping" },
-  { href: "/use-cases", label: "Social Media Management" },
-  { href: "/use-cases", label: "E-commerce Monitoring" },
-  { href: "/use-cases", label: "Market Research" },
-  { href: "/use-cases", label: "SEO Monitoring" },
-  { href: "/use-cases", label: "Anti-Fraud" },
+  { href: "/use-cases#scraping", label: "Web Scraping" },
+  { href: "/use-cases#social-media", label: "Social Media Management" },
+  { href: "/use-cases#ecommerce", label: "E-commerce Monitoring" },
+  { href: "/use-cases#market", label: "Market Research" },
+  { href: "/use-cases#seo", label: "SEO Monitoring" },
+  { href: "/use-cases#anti-fraud", label: "Anti-Fraud" },
 ] as const;
 
 const resourceLinks = [
@@ -150,8 +144,14 @@ export function Footer() {
           </form>
         </div>
 
-        <div className="mt-8 flex flex-col items-center gap-4 border-t border-zinc-800 pt-8 text-sm text-zinc-400 sm:flex-row sm:justify-between">
+        <div className="mt-8 flex flex-col items-center gap-6 border-t border-zinc-800 pt-8 text-sm text-zinc-400 sm:flex-row sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Proxium. {t("rights")}</p>
+
+          <div className="flex items-center gap-4">
+            <Image src="/images/visa.png" alt="Visa" width={48} height={30} className="h-6 w-auto opacity-60" />
+            <Image src="/images/mastercard.png" alt="Mastercard" width={48} height={30} className="h-6 w-auto opacity-60" />
+            <Image src="/images/pci-dss-compliant-logo-vector.svg" alt="PCI DSS Compliant" width={60} height={30} className="h-6 w-auto opacity-60 invert" />
+          </div>
 
           <div className="flex items-center gap-6">
             <Link

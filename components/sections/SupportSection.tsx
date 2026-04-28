@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/translations";
 import { Headphones, BookOpen, Rocket, Wrench } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import ScrollReveal from "@/components/animations/ScrollReveal";

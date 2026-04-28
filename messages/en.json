@@ -22,7 +22,7 @@
     "ctaSecondary": "Browse Proxies",
     "ctaTertiary": "How It Works",
     "benefits": {
-      "instant": "Instant access after purchase",
+      "instant": "Fast activation after purchase",
       "countries": "Country-level selection",
       "flexible": "Flexible balance spending",
       "noSubs": "No unnecessary subscriptions"
@@ -85,7 +85,7 @@
       "topup": {
         "step": "1",
         "title": "Add funds to your account",
-        "description": "Top up your balance using any supported payment method. The exact amount appears in your account instantly."
+        "description": "Top up your balance in USD, EUR, or GBP using any supported payment method. The amount appears in your account shortly after."
       },
       "choose": {
         "step": "2",
@@ -301,7 +301,7 @@
     "title": "Ready to get started?",
     "subtitle": "Top up your balance and buy the proxies you need. No subscriptions, no commitments.",
     "button": "Top Up & Start",
-    "note": "Instant activation after purchase"
+    "note": "Fast activation · Pay in USD, EUR, or GBP"
   },
   "footer": {
     "description": "Reliable proxy service for business, automation, and data collection. Buy proxies with a simple balance-based model.",
