@@ -11,6 +11,10 @@ export interface IProxyProduct extends Document {
   description: string;
   features: string[];
   inStock: boolean;
+  bandwidth: string;
+  speed: string;
+  protocol: string;
+  authentication: string;
   createdAt: Date;
 }
 
@@ -30,6 +34,10 @@ const ProxyProductSchema = new Schema<IProxyProduct>(
     description: { type: String, required: true },
     features: [{ type: String }],
     inStock: { type: Boolean, default: true },
+    bandwidth: { type: String },
+    speed: { type: String },
+    protocol: { type: String },
+    authentication: { type: String },
   },
   { timestamps: true },
 );

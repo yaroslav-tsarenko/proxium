@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Receipt, Wallet, Plus, Loader2, Check, X } from "lucide-react";
 import { useCurrency } from "@/lib/currency";
+import { useDashboard } from "@/lib/dashboard-context";
 import { cn } from "@/lib/utils/cn";
 
 interface TopUpRecord {
@@ -20,6 +21,7 @@ const presetAmounts = [500, 1000, 2500, 5000, 10000, 25000];
 
 export default function TopUpsPage() {
   const { symbol, currency } = useCurrency();
+  const { refreshUser } = useDashboard();
   const [topups, setTopups] = useState<TopUpRecord[]>([]);
   const [balance, setBalance] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -76,6 +78,7 @@ export default function TopUpsPage() {
           setSuccess(false);
           setSubmitting(false);
           fetchData();
+          refreshUser();
         }, 1500);
       } else {
         setSubmitting(false);
