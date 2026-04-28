@@ -85,7 +85,7 @@ export default function GetStartedPage() {
         <ScrollReveal>
           <div className="mt-12 text-center">
             <Link
-              href="/contact"
+              href="/sign-up"
               className="inline-flex items-center gap-2 rounded-xl bg-green-500 px-8 py-3.5 text-sm font-semibold text-zinc-950 hover:bg-green-400 transition-colors shadow-[0_0_20px_rgba(34,197,94,0.3)]"
             >
               Create Account <ArrowRight className="w-4 h-4" />

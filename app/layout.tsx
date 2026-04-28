@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { jetbrainsMono } from "@/styles/fonts";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { CurrencyProvider } from "@/lib/currency";
+import { LayoutShell } from "@/components/layout/LayoutShell";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -39,9 +38,7 @@ export default function RootLayout({
     <html lang="en" className={`${jetbrainsMono.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-background text-foreground font-mono antialiased">
         <CurrencyProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <LayoutShell>{children}</LayoutShell>
         </CurrencyProvider>
       </body>
     </html>
