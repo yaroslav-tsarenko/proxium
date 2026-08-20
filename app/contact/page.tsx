@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { Container } from "@/components/layout/Container";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Mail, Phone, Headphones } from "lucide-react";
+import { COMPANY } from "@/lib/company";
 
 const proxyTypes = [
   { value: "", label: "Select proxy type" },
@@ -71,7 +72,12 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-zinc-50 font-semibold">Email</h3>
                     <p className="text-zinc-400 text-sm mt-1">
-                      support@proxium.io
+                      <a
+                        href={`mailto:${COMPANY.email}`}
+                        className="transition-colors hover:text-green-400"
+                      >
+                        {COMPANY.email}
+                      </a>
                     </p>
                     <p className="text-zinc-500 text-xs mt-1">
                       We respond within 24 hours
@@ -79,20 +85,27 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-blue-400" />
+                {COMPANY.phone && (
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-zinc-50 font-semibold">Phone</h3>
+                      <p className="text-zinc-400 text-sm mt-1">
+                        <a
+                          href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}
+                          className="transition-colors hover:text-green-400"
+                        >
+                          {COMPANY.phone}
+                        </a>
+                      </p>
+                      <p className="text-zinc-500 text-xs mt-1">
+                        Available 24/7
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-zinc-50 font-semibold">Phone</h3>
-                    <p className="text-zinc-400 text-sm mt-1">
-                      +1 (800) 555-0199
-                    </p>
-                    <p className="text-zinc-500 text-xs mt-1">
-                      Mon-Fri, 9AM-6PM UTC
-                    </p>
-                  </div>
-                </div>
+                )}
 
                 <div className="flex items-start gap-4">
                   <div className="w-11 h-11 rounded-xl bg-cyan-500/10 flex items-center justify-center shrink-0">

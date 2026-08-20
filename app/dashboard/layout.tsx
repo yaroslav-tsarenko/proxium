@@ -27,7 +27,7 @@ const navItems = [
 function DashboardShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const { currency, setCurrency, symbol } = useCurrency();
+  const { currency, setCurrency, format } = useCurrency();
   const { user } = useDashboard();
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -61,7 +61,7 @@ function DashboardShell({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("click", close);
   }, [currencyOpen]);
 
-  const formatBalance = (cents: number) => `${symbol}${(cents / 100).toFixed(2)}`;
+  const formatBalance = (cents: number) => format(cents);
 
   const isActive = (item: typeof navItems[number]) =>
     item.exact ? pathname === item.href : pathname.startsWith(item.href);

@@ -3,24 +3,26 @@
 import { Container } from "@/components/layout/Container";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
-const companies = [
-  "TechFlow",
-  "DataSync",
-  "CloudNet",
-  "WebScale",
-  "NetPrime",
-  "InfoBase",
+const useCases = [
+  "Web Scraping",
+  "Ad Verification",
+  "Market Research",
+  "SEO Monitoring",
+  "Social Media",
+  "E-commerce",
+  "Anti-Fraud",
+  "Brand Protection",
 ];
 
 export default function LogoBanner() {
-  const marqueeItems = [...companies, ...companies];
+  const marqueeItems = [...useCases, ...useCases];
 
   return (
     <section className="py-12 bg-zinc-950 overflow-hidden border-y border-zinc-800/50">
       <Container>
         <ScrollReveal>
           <p className="text-zinc-500 text-xs uppercase tracking-[0.2em] text-center mb-8 font-medium">
-            Trusted by businesses worldwide
+            Built for every data-driven workflow
           </p>
         </ScrollReveal>
       </Container>

@@ -4,6 +4,8 @@ import { User } from "@/lib/db/models/User";
 import { hashPassword } from "@/lib/auth/passwords";
 import { signToken, setAuthCookie } from "@/lib/auth/jwt";
 import { EXCLUDED_COUNTRIES } from "@/lib/auth/constants";
+import { sendMail } from "@/lib/email/mailer";
+import { welcomeEmail } from "@/lib/email/templates";
 
 export async function POST(request: Request) {
   try {
@@ -57,6 +59,11 @@ export async function POST(request: Request) {
 
     const token = await signToken({ userId: user._id.toString(), email: user.email });
     await setAuthCookie(token);
+
+    const welcome = welcomeEmail(user.name);
+    sendMail({ to: user.email, ...welcome }).catch((err) =>
+      console.error("Failed to send welcome email:", err),
+    );
 
     return NextResponse.json({
       success: true,

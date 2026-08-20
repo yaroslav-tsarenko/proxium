@@ -29,7 +29,7 @@ interface OrderRecord {
 }
 
 export default function OrdersPage() {
-  const { symbol } = useCurrency();
+  const { format } = useCurrency();
   const [orders, setOrders] = useState<OrderRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -116,7 +116,7 @@ export default function OrdersPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-zinc-50 text-sm font-bold">
-                      {symbol}{(order.totalPrice / 100).toFixed(2)}
+                      {format(order.totalPrice)}
                     </span>
                     <span className={cn("text-[10px] font-semibold px-2.5 py-1 rounded-full", statusColors[order.status] || statusColors.active)}>
                       {order.status}

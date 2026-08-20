@@ -20,7 +20,7 @@ interface Transaction {
 }
 
 export default function BillingPage() {
-  const { symbol } = useCurrency();
+  const { format } = useCurrency();
   const { user } = useDashboard();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
@@ -99,16 +99,16 @@ export default function BillingPage() {
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
           <p className="text-zinc-500 text-xs font-medium">Current Balance</p>
           <p className="text-green-400 text-2xl font-bold mt-1">
-            {user ? `${symbol}${(user.balance / 100).toFixed(2)}` : "—"}
+            {user ? format(user.balance) : "—"}
           </p>
         </div>
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
           <p className="text-zinc-500 text-xs font-medium">Total Added</p>
-          <p className="text-cyan-400 text-2xl font-bold mt-1">{symbol}{(totalAdded / 100).toFixed(2)}</p>
+          <p className="text-cyan-400 text-2xl font-bold mt-1">{format(totalAdded)}</p>
         </div>
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
           <p className="text-zinc-500 text-xs font-medium">Total Spent</p>
-          <p className="text-zinc-50 text-2xl font-bold mt-1">{symbol}{(totalSpent / 100).toFixed(2)}</p>
+          <p className="text-zinc-50 text-2xl font-bold mt-1">{format(totalSpent)}</p>
         </div>
       </div>
 
@@ -172,7 +172,7 @@ export default function BillingPage() {
               <div className="flex items-center gap-3">
                 <span className={cn("text-sm font-bold", txn.amount > 0 ? "text-green-400" : "text-zinc-50")}>
                   {txn.amount > 0 ? "+" : ""}
-                  {symbol}{(Math.abs(txn.amount) / 100).toFixed(2)}
+                  {format(Math.abs(txn.amount))}
                 </span>
                 <span className={cn("text-[10px] font-semibold px-2 py-0.5 rounded-full", statusColors[txn.status] || statusColors.completed)}>
                   {txn.status}

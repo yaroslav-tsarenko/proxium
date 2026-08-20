@@ -14,7 +14,7 @@ interface ExtraStats {
 }
 
 export default function DashboardOverview() {
-  const { symbol } = useCurrency();
+  const { format } = useCurrency();
   const { user } = useDashboard();
   const [extra, setExtra] = useState<ExtraStats>({ activeProxies: 0, totalOrders: 0, totalTopUps: 0 });
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ export default function DashboardOverview() {
   }, []);
 
   const statCards = [
-    { label: "Balance", value: `${symbol}${((user?.balance ?? 0) / 100).toFixed(2)}`, icon: Wallet, color: "text-green-400", bg: "bg-green-500/10" },
+    { label: "Balance", value: format(user?.balance ?? 0), icon: Wallet, color: "text-green-400", bg: "bg-green-500/10" },
     { label: "Active Proxies", value: extra.activeProxies.toString(), icon: Server, color: "text-cyan-400", bg: "bg-cyan-500/10" },
     { label: "Total Orders", value: extra.totalOrders.toString(), icon: ShoppingCart, color: "text-blue-400", bg: "bg-blue-500/10" },
     { label: "Top-Ups", value: extra.totalTopUps.toString(), icon: TrendingUp, color: "text-violet-400", bg: "bg-violet-500/10" },

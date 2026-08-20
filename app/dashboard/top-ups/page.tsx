@@ -1,9 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { Receipt, Wallet, Plus, Loader2, Check, X } from "lucide-react";
 import { useCurrency } from "@/lib/currency";
+import { COMPANY } from "@/lib/company";
 import { useDashboard } from "@/lib/dashboard-context";
 import { cn } from "@/lib/utils/cn";
 
@@ -20,7 +23,7 @@ interface TopUpRecord {
 const presetAmounts = [500, 1000, 2500, 5000, 10000, 25000];
 
 export default function TopUpsPage() {
-  const { symbol, currency } = useCurrency();
+  const { currency, format } = useCurrency();
   const { refreshUser } = useDashboard();
   const [topups, setTopups] = useState<TopUpRecord[]>([]);
   const [balance, setBalance] = useState(0);
@@ -29,6 +32,7 @@ export default function TopUpsPage() {
   const [amount, setAmount] = useState(1000);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [agreed, setAgreed] = useState(false);
 
   const tableRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -100,11 +104,11 @@ export default function TopUpsPage() {
         <div>
           <h2 className="text-zinc-50 text-2xl font-bold">Top-Up History</h2>
           <p className="text-zinc-400 text-sm mt-1">
-            Current balance: <span className="text-green-400 font-bold">{symbol}{(balance / 100).toFixed(2)}</span>
+            Current balance: <span className="text-green-400 font-bold">{format(balance)}</span>
           </p>
         </div>
         <button
-          onClick={() => setShowModal(true)}
+          onClick={() => { setAgreed(false); setShowModal(true); }}
           className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-green-500 text-zinc-950 text-sm font-semibold hover:bg-green-400 transition-colors shadow-[0_0_20px_rgba(34,197,94,0.3)]"
         >
           <Plus className="w-4 h-4" />
@@ -141,7 +145,7 @@ export default function TopUpsPage() {
                 {new Date(t.createdAt).toLocaleDateString()}
               </span>
               <span className="text-zinc-50 text-sm font-bold">
-                +{symbol}{(t.amount / 100).toFixed(2)}
+                +{format(t.amount)}
               </span>
               <span className="text-zinc-400 text-xs capitalize">{t.method}</span>
               <span className="text-zinc-500 text-[10px] font-mono">{t.reference}</span>
@@ -162,7 +166,7 @@ export default function TopUpsPage() {
                   <Check className="w-7 h-7 text-green-400" />
                 </div>
                 <p className="text-zinc-50 font-bold text-lg">Top-up successful!</p>
-                <p className="text-zinc-400 text-sm mt-1">{symbol}{(amount / 100).toFixed(2)} added</p>
+                <p className="text-zinc-400 text-sm mt-1">{format(amount)} added</p>
               </div>
             ) : (
               <>
@@ -188,7 +192,7 @@ export default function TopUpsPage() {
                           : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700",
                       )}
                     >
-                      {symbol}{(a / 100).toFixed(0)}
+                      {format(a)}
                     </button>
                   ))}
                 </div>
@@ -205,14 +209,40 @@ export default function TopUpsPage() {
                   />
                 </div>
 
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <Image src="/images/visa.svg" alt="Visa" width={40} height={26} className="h-6 w-auto rounded" />
+                  <Image src="/images/mastercard.svg" alt="Mastercard" width={40} height={26} className="h-6 w-auto rounded" />
+                  <Image src="/images/pci-dss.svg" alt="PCI DSS Compliant" width={52} height={26} className="h-6 w-auto rounded" />
+                </div>
+
+                <label className="flex items-start gap-2 mb-4 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 shrink-0 accent-green-500"
+                  />
+                  <span className="text-zinc-400 text-xs leading-relaxed">
+                    I agree to the{" "}
+                    <Link href="/legal/terms" className="text-green-400 hover:text-green-300">Terms &amp; Conditions</Link>{" "}
+                    and{" "}
+                    <Link href="/legal/privacy" className="text-green-400 hover:text-green-300">Privacy Policy</Link>.
+                  </span>
+                </label>
+
                 <button
                   onClick={handleTopUp}
-                  disabled={submitting || amount < 500}
-                  className="w-full py-3.5 rounded-xl bg-green-500 text-zinc-950 font-semibold text-sm hover:bg-green-400 transition-colors shadow-[0_0_20px_rgba(34,197,94,0.3)] disabled:opacity-50 flex items-center justify-center gap-2"
+                  disabled={submitting || amount < 500 || !agreed}
+                  className="w-full py-3.5 rounded-xl bg-green-500 text-zinc-950 font-semibold text-sm hover:bg-green-400 transition-colors shadow-[0_0_20px_rgba(34,197,94,0.3)] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-                  Add {symbol}{(amount / 100).toFixed(2)}
+                  Add {format(amount)}
                 </button>
+
+                <p className="mt-4 text-center text-[10px] leading-relaxed text-zinc-600">
+                  Payments processed securely. Merchant of Record: {COMPANY.name},
+                  {" "}{COMPANY.address}. Prices include VAT where applicable.
+                </p>
               </>
             )}
           </div>

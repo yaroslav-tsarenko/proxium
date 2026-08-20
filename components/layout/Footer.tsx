@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "@/lib/translations";
+import { COMPANY } from "@/lib/company";
 import { Container } from "./Container";
 
 const productLinks = [
@@ -47,6 +48,17 @@ export function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-zinc-400 max-w-xs">
               {t("description")}
             </p>
+            <div className="mt-5 space-y-1 text-xs leading-relaxed text-zinc-500">
+              <p className="font-medium text-zinc-400">{COMPANY.name}</p>
+              <p>Reg. No.: {COMPANY.regNumber}</p>
+              {COMPANY.vat && <p>VAT No.: {COMPANY.vat}</p>}
+              <p>{COMPANY.address}</p>
+              <p>
+                <a href={`mailto:${COMPANY.email}`} className="transition-colors hover:text-zinc-300">
+                  {COMPANY.email}
+                </a>
+              </p>
+            </div>
           </div>
 
           <div>
@@ -148,9 +160,9 @@ export function Footer() {
           <p>&copy; {new Date().getFullYear()} Proxium. {t("rights")}</p>
 
           <div className="flex items-center gap-4">
-            <Image src="/images/visa.png" alt="Visa" width={48} height={30} className="h-6 w-auto opacity-60" />
-            <Image src="/images/mastercard.png" alt="Mastercard" width={48} height={30} className="h-6 w-auto opacity-60" />
-            <Image src="/images/pci-dss-compliant-logo-vector.svg" alt="PCI DSS Compliant" width={60} height={30} className="h-6 w-auto opacity-60 invert" />
+            <Image src="/images/visa.svg" alt="Visa" width={48} height={30} className="h-7 w-auto rounded" />
+            <Image src="/images/mastercard.svg" alt="Mastercard" width={48} height={30} className="h-7 w-auto rounded" />
+            <Image src="/images/pci-dss.svg" alt="PCI DSS Compliant" width={60} height={30} className="h-7 w-auto rounded" />
           </div>
 
           <div className="flex items-center gap-6">

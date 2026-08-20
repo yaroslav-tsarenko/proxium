@@ -37,7 +37,7 @@ const typeConfig: Record<string, { icon: typeof Server; color: string; bg: strin
 };
 
 export default function MarketplacePage() {
-  const { symbol } = useCurrency();
+  const { format } = useCurrency();
   const { refreshUser } = useDashboard();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -256,7 +256,7 @@ export default function MarketplacePage() {
 
                 <div className="mt-auto pt-4 border-t border-zinc-800/50 flex items-end justify-between gap-3">
                   <div>
-                    <span className="text-zinc-50 text-xl font-bold">{symbol}{(product.pricePerUnit / 100).toFixed(2)}</span>
+                    <span className="text-zinc-50 text-xl font-bold">{format(product.pricePerUnit)}</span>
                     <span className="text-zinc-600 text-[10px] ml-1">/ {product.unit}</span>
                   </div>
 
@@ -276,7 +276,7 @@ export default function MarketplacePage() {
                         "disabled:opacity-50",
                       )}
                     >
-                      {bought === product._id ? <><Check className="w-3 h-3" /> Done</> : buying === product._id ? <Loader2 className="w-3 h-3 animate-spin" /> : <><ShoppingCart className="w-3 h-3" /> {symbol}{(total / 100).toFixed(2)}</>}
+                      {bought === product._id ? <><Check className="w-3 h-3" /> Done</> : buying === product._id ? <Loader2 className="w-3 h-3 animate-spin" /> : <><ShoppingCart className="w-3 h-3" /> {format(total)}</>}
                     </button>
                   </div>
                 </div>
