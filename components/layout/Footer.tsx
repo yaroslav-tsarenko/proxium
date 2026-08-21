@@ -31,6 +31,7 @@ const resourceLinks = [
 const companyLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Support" },
+  { href: "/legal", label: "Legal Policies" },
 ] as const;
 
 export function Footer() {
@@ -179,10 +180,10 @@ export function Footer() {
               {t("privacy")}
             </Link>
             <Link
-              href="/legal/acceptable-use"
+              href="/legal"
               className="transition-colors hover:text-zinc-50"
             >
-              {t("acceptable")}
+              {t("legal")}
             </Link>
           </div>
         </div>
