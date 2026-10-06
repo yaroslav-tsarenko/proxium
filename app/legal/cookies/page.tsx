@@ -12,13 +12,13 @@ export default function CookiePolicyPage() {
   return (
     <LegalPage
       title="Cookie Policy"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
-          heading: "1. Purpose",
+          heading: "1. Purpose and legal framework",
           blocks: [
-            `This Cookie Policy explains how ${COMPANY.name} uses cookies and similar technologies on worldproxium.com and the Proxium dashboard. It should be read together with the Privacy Policy.`,
+            `This Cookie Policy explains how ${COMPANY.name} uses cookies and similar storage or access technologies on worldproxium.com and its dashboard. It complements the Privacy Policy. UK use is governed by the Privacy and Electronic Communications Regulations 2003 (PECR), as amended, alongside UK GDPR where personal information is processed. Requirements applicable to visitors elsewhere are also respected.`,
           ],
         },
         {
@@ -31,27 +31,29 @@ export default function CookiePolicyPage() {
           heading: "3. Cookie categories",
           blocks: [
             { subhead: "Strictly necessary" },
-            "Required for website operation, security, authentication, session management, fraud prevention, load balancing and saving privacy choices. These cannot be disabled through the consent banner because the requested service would not function correctly without them.",
-            { subhead: "Functional" },
-            "Remember optional preferences such as language, currency or interface settings. Where required, these are activated only after consent.",
+            "Technologies needed for a communication or a service you request, such as a login session, checkout security or saving a privacy choice, where the legal exemption actually applies. A technology is not exempt merely because it is useful to the business.",
+            { subhead: "Optional preferences" },
+            "Technologies for additional interface or preference features. Where these are optional and not demonstrably exempt, they are used only with prior consent.",
             { subhead: "Analytics" },
-            "Help us understand aggregated use, navigation and technical performance so that we can improve the website. These are non-essential and require consent where applicable.",
-            { subhead: "Advertising or measurement" },
-            "Measure campaigns or support relevant advertising. Proxium will use these technologies only where implemented, disclosed and lawfully consented to.",
+            "Technologies that measure website navigation or performance, if implemented. Our default is prior consent. A statistical-purpose exception is used only if its legal conditions, transparency and required right to object have been verified for the actual implementation.",
+            { subhead: "Advertising and campaign measurement" },
+            "Technologies for advertising, profiling or measuring campaigns, if implemented. Consent is requested before they are used where required; they are not treated as necessary for proxy access.",
+            "These descriptions are categories, not a statement that every technology is deployed. Actual technologies, providers, purposes and duration must be disclosed in the current inventory made available with the site’s privacy controls.",
           ],
         },
         {
-          heading: "4. Specific cookies and duration",
+          heading: "4. Inventory, providers and duration",
           blocks: [
-            `The cookies actually used may change as the website and providers change. A current inventory of cookie names, providers, purposes, categories and lifetimes must be displayed through the cookie consent settings where available. You may also request the current inventory at ${COMPANY.email}.`,
-            "Session cookies normally expire when the browser is closed. Persistent cookies remain until their stated expiry or earlier deletion. We do not retain a cookie longer than reasonably necessary for its stated purpose.",
+            "The current inventory identifies the cookies and similar technologies actually deployed, their provider, purpose, category and duration, and any applicable consent or exemption. It is available with the website’s cookie information or privacy controls. You may also request it by email. Third-party tags and local storage are covered where they store or access information on your device.",
+            "Session technologies generally expire when the session ends; persistent technologies have a stated duration. Technologies are kept only as long as reasonably needed for the disclosed purpose. Provider changes or new purposes are assessed before deployment and the disclosures are updated.",
           ],
         },
         {
-          heading: "5. Consent and choices",
+          heading: "5. Consent, rejection and withdrawal",
           blocks: [
-            "On a first visit, you may accept all optional cookies or reject non-essential cookies. Optional technologies must not be activated before valid consent where consent is required. Withdrawing consent does not affect processing that occurred lawfully before withdrawal.",
-            "Cookie preferences should remain available through a “Cookie Settings” control on the website. You may also delete or block cookies through browser settings. Blocking strictly necessary cookies may prevent login, checkout or other functionality.",
+            "Where consent is required, optional technologies remain blocked until you make an informed affirmative choice. You can accept or reject optional categories and change a choice through Cookie Settings. Rejection and withdrawal are as straightforward as acceptance; no pre-ticked choice, continued browsing or acceptance of general Terms is treated as consent.",
+            "Rejecting optional technologies does not prevent access to the core paid service. Where a lawful exception requires a right to object instead of consent, an effective objection control is provided and explained. We retain an appropriate record of preferences and apply withdrawal to future use without affecting prior lawful processing.",
+            "You can also delete or block technologies through your browser. Blocking a genuinely necessary session or security technology may prevent the requested login or checkout function. The consent interface and Cookie Settings remain the direct controls for choices offered by Proxium.",
           ],
         },
         {

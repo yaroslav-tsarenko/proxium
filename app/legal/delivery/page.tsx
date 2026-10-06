@@ -12,13 +12,13 @@ export default function DeliveryPolicyPage() {
   return (
     <LegalPage
       title="Digital Delivery & Service Fulfilment Policy"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
-          heading: "1. Nature of delivery",
+          heading: "1. Digital access as a service",
           blocks: [
-            "Proxium supplies digital proxy access. No physical goods are shipped. Delivery occurs electronically through the Proxium dashboard, account interface, API or another electronic method stated in the order.",
+            "Proxium supplies proxy access as a service for the agreed duration or allowance. Access information is delivered through the dashboard, API or another electronic method in the order. There are no physical goods to ship. Calling this digital delivery does not classify ongoing proxy access as a download or extinguish consumer service rights.",
           ],
         },
         {
@@ -36,16 +36,17 @@ export default function DeliveryPolicyPage() {
           ],
         },
         {
-          heading: "3. Delivery time",
+          heading: "3. Start date and activation",
           blocks: [
-            "Activation is normally immediate or completed within a short period after purchase. It may take longer because of inventory allocation, payment review, account verification, maintenance, provider delay or a technical incident.",
-            "Any estimated activation time is not a guaranteed deadline unless a separate written agreement states otherwise. If delivery is materially delayed, contact support before placing a duplicate order.",
+            "The agreed service start date and any activation estimate are disclosed before purchase. Access is normally enabled promptly after acceptance and necessary checks, subject to the consumer early-start requirements. Inventory, payment review or a technical incident may delay activation; we explain a material delay and available remedies.",
+            "For a Consumer’s contract with a cancellation period, an early start requires the separate express request described in the Refund and Cancellation Policy. Without a valid request, performance is deferred until the period expires. If no time is agreed, the service is supplied within a reasonable time as required by law.",
           ],
         },
         {
-          heading: "4. Delivery confirmation",
+          heading: "4. Access delivery and completion",
           blocks: [
-            "A Service is considered delivered when access information is made available in the Customer’s dashboard, the account is enabled to use the purchased proxy pool, or an activation confirmation is sent. The Customer is responsible for maintaining access to the registered email and dashboard.",
+            "Access information is delivered when usable credentials or the agreed account access become available and any required confirmation is provided. You should keep the order confirmation and protect the credentials.",
+            "Delivery of access is the start of the agreed service, not automatic completion of it. Ongoing availability and allowances remain due according to the order. Full performance for cancellation purposes is assessed against the entire purchased service and the law; issuing credentials alone does not establish it.",
           ],
         },
         {
@@ -57,7 +58,7 @@ export default function DeliveryPolicyPage() {
         {
           heading: "6. Credential security",
           blocks: [
-            "Proxy credentials are confidential digital access information. The Customer must store them securely, limit access and rotate or replace them where supported after suspected compromise. Use by a person who obtained credentials through the Customer is treated as account use unless Proxium caused the compromise.",
+            "Store credentials securely and limit access to authorised users. Notify us promptly if they may be compromised and rotate them where supported. Responsibility for unauthorised use depends on the circumstances, the parties’ conduct and applicable law; a Consumer is not automatically made liable for all use regardless of fault.",
           ],
         },
         {
@@ -67,15 +68,22 @@ export default function DeliveryPolicyPage() {
           ],
         },
         {
-          heading: "8. Failed or incorrect delivery",
+          heading: "8. Failed, incorrect or defective service",
           blocks: [
-            "Where Proxium confirms non-delivery or a material mismatch, we may correct the order, replace the Service, restore the deducted balance, issue an account credit or provide a refund as appropriate. Remedies are governed by the Terms and Refund & Cancellation Policy.",
+            "Contact us if access is not supplied, does not match the order or is materially defective. We investigate and provide the contractual or statutory remedy applicable to the failure. For Consumers, this includes repeat performance or an appropriate price reduction where legally available, including a monetary refund when required.",
+            "A replacement, credit or balance restoration is offered only on terms consistent with the applicable right. It is not an automatic substitute for a mandatory refund. Statutory cancellation during a cooling-off period is assessed separately from technical support and does not require proof of a defect.",
           ],
         },
         {
           heading: "9. Support",
           blocks: [
             `For delivery issues, contact ${COMPANY.email} from the registered account email and include the order reference, approximate purchase time, screenshots or error messages where safe, and troubleshooting already attempted. Never send passwords or full card details.`,
+          ],
+        },
+        {
+          heading: "10. Existing purchases on transition",
+          blocks: [
+            "An active service covered by the transition retains its remaining validity, traffic allowance and agreed product entitlements. Its original purchase and activation records are preserved. The operator transition does not mark it as delivered again, restart its term or convert it into a fresh purchase. Changes to an existing paid entitlement require the applicable contractual and consumer protections.",
           ],
         },
       ]}

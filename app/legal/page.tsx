@@ -20,7 +20,7 @@ const policies = [
     href: "/legal/privacy",
     title: "Privacy Policy",
     description:
-      "How we collect, use, share and protect personal data, and your rights under the GDPR.",
+      "How we collect, use, share and protect personal data, and your rights under the UK GDPR.",
   },
   {
     href: "/legal/cookies",
@@ -88,6 +88,13 @@ export default function LegalIndexPage() {
             operates as a distinct document, while the Terms &amp; Conditions incorporate
             the others by reference.
           </p>
+          <p className="text-zinc-400 leading-relaxed mt-4">
+            For new contracts, the applicable effective date is the date these terms are
+            offered and accepted. For an existing account, it is the transition date
+            notified to the customer following the legally effective transfer
+            arrangements. A revision date alone does not transfer a contract or change its
+            historic rights.
+          </p>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {policies.map(({ href, title, description }) => (
@@ -108,7 +115,7 @@ export default function LegalIndexPage() {
 
           <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm leading-relaxed text-zinc-400">
             <p className="font-medium text-zinc-300">{COMPANY.name}</p>
-            <p>Registry code {COMPANY.regNumber}</p>
+            <p>Company number {COMPANY.regNumber}</p>
             <p>{COMPANY.address}</p>
             <p>
               <a

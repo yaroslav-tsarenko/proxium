@@ -5,26 +5,28 @@ import { COMPANY } from "@/lib/company";
 export const metadata: Metadata = {
   title: "Privacy Policy | Proxium",
   description:
-    "How Proxium collects, uses, stores, and protects your personal data, including cookies, data retention, and your rights under the GDPR.",
+    "How Proxium collects, uses, stores, and protects your personal data, including cookies, data retention, and your rights under the UK GDPR.",
 };
 
 export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
-          heading: "1. Scope and controller",
+          heading: "1. Scope, controller and applicable law",
           blocks: [
-            `This Privacy Policy explains how ${COMPANY.name} (“Proxium”, “we”, “us” or “our”) collects and uses personal data in connection with worldproxium.com, account registration, payments, customer support and the Proxium proxy Services.`,
-            `${COMPANY.name}, registry code ${COMPANY.regNumber}, ${COMPANY.address}, is the controller of the personal data described in this Policy. Contact: ${COMPANY.email}.`,
+            `This Privacy Policy explains how ${COMPANY.name} (Proxium, we, us or our), company number ${COMPANY.regNumber}, handles personal information for worldproxium.com, account administration, payment, support, security and the proxy Services. Our contact address is ${COMPANY.address}. Contact: ${COMPANY.email}.`,
+            "Our processing is subject to the UK General Data Protection Regulation (UK GDPR), the Data Protection Act 2018 and applicable amendments, including the Data (Use and Access) Act 2025. The EU GDPR also applies to processing within its territorial scope. A person’s applicable rights are not removed by the operator being based in the United Kingdom.",
+            "For an existing account, our controller role starts when the relevant information is lawfully transferred or otherwise brought under our control, as explained in the operator notice. The revision date of this Policy is not the date on which that transfer necessarily occurred.",
           ],
         },
         {
           heading: "2. Personal data we collect",
           blocks: [
+            "The categories below describe information used for the relevant functions where supplied, generated or reasonably necessary. We collect only what is proportionate for the purpose; they do not mean every category is collected from every customer.",
             { subhead: "Registration and identity data" },
             "Name, surname, email address, telephone number, date of birth, password credentials in protected form, country and information supplied to confirm identity, age, authority or eligibility.",
             { subhead: "Address and billing data" },
@@ -58,19 +60,23 @@ export default function PrivacyPage() {
         {
           heading: "5. Purposes and legal bases",
           blocks: [
-            "To create and administer an account, accept top-ups, fulfil purchases, deliver proxies, provide support and process refunds, based on performance of a contract.",
-            "To secure accounts and infrastructure, prevent fraud and abuse, improve reliability, enforce policies and defend legal claims, based on our legitimate interests.",
-            "To issue invoices, maintain accounting records, respond to lawful requests, apply sanctions restrictions and comply with tax or other legal obligations.",
-            "To send optional marketing and use non-essential cookies where you have consented, or where another lawful basis expressly applies.",
-            "To establish, exercise or defend legal rights and to protect customers, Proxium and third parties from harm.",
+            {
+              list: [
+                "To create and administer an account, accept top-ups, fulfil purchases, deliver proxies, provide support and process refunds, based on performance of a contract.",
+                "To secure accounts and infrastructure, prevent fraud and abuse, improve reliability, enforce policies and defend legal claims, based on our legitimate interests.",
+                "To issue invoices, maintain accounting records, respond to lawful requests, apply sanctions restrictions and comply with tax or other legal obligations.",
+                "To send optional marketing and use non-essential cookies where you have consented, or where another lawful basis expressly applies.",
+                "To establish, exercise or defend legal rights and to protect customers, Proxium and third parties from harm.",
+              ],
+            },
             "Where processing is based on legitimate interests, we consider the necessity and impact of the processing and implement safeguards appropriate to the risk. You may object as described below.",
           ],
         },
         {
-          heading: "6. Customer data and roles",
+          heading: "6. Customers, controllers and processors",
           blocks: [
-            "Proxium is the controller of account, transaction, website, security, compliance and support data. A Customer independently determines which third-party sites to access and what data to collect or process using a proxy. The Customer is responsible for its own legal basis, notices, permissions and compliance.",
-            "Unless Proxium signs a separate data processing agreement expressly covering a particular managed processing service, Proxium does not act as the Customer’s processor merely because network traffic is routed through a proxy.",
+            "We act as controller for the account, transaction, website, security, compliance and support information whose purposes and essential means we determine. Customers determine which third-party resources to access and remain responsible for the lawful collection and use of information for their own purposes.",
+            "Data protection roles depend on the actual processing, not on whether a document has been signed. Where we process personal information on a customer’s behalf and instructions as a processor, the processing must be covered by a compliant data processing agreement or equivalent binding terms before it begins. Where we determine our own processing purposes, the relevant controller obligations apply. No customer is relieved of its duties merely by routing traffic through a proxy.",
           ],
         },
         {
@@ -90,7 +96,8 @@ export default function PrivacyPage() {
         {
           heading: "9. International transfers",
           blocks: [
-            "Some providers may process personal data outside Estonia or the European Economic Area. Where required, we use an adequacy decision, standard contractual clauses or another lawful transfer mechanism and apply supplementary safeguards appropriate to the risk.",
+            "A provider or recipient may process information outside the United Kingdom. For a restricted transfer under UK GDPR, we rely on applicable adequacy regulations, an appropriate safeguard such as the UK International Data Transfer Agreement or the UK Addendum to EU standard contractual clauses, or a narrowly applicable statutory exception. We assess the protection provided and apply additional measures where required. EU standard contractual clauses alone are not the UK transfer safeguard.",
+            "For information subject to EU GDPR transfer rules, the relevant EU adequacy decision, EU standard contractual clauses or another permitted mechanism must separately apply. We do not assume that a safeguard for one regime automatically satisfies the other. You may ask for information about the safeguards applicable to your information and a copy where available, with necessary confidential details redacted.",
           ],
         },
         {
@@ -107,16 +114,18 @@ export default function PrivacyPage() {
           ],
         },
         {
-          heading: "12. Automated checks",
+          heading: "12. Automated checks and safeguards",
           blocks: [
-            "Automated signals may be used to detect payment fraud, restricted locations, account abuse or security threats. Where a decision produces a legal or similarly significant effect and applicable law requires it, you may request human review, express your position and contest the decision.",
+            "Automated signals may identify payment fraud, restricted locations, account abuse or security threats. These signals may involve account, billing, website-access and transaction information; they do not require a retained proxy traffic history.",
+            "Where a decision is made solely by automated processing and has legal or similarly significant effects, we apply the safeguards required by the applicable data protection regime, including information about the decision and a route to express your views, contest it and obtain human intervention where required. Special category information is subject to the additional restrictions applicable to it. Send a request for review to our contact email.",
           ],
         },
         {
-          heading: "13. Your rights",
+          heading: "13. Individual rights and requests",
           blocks: [
-            "Subject to GDPR conditions and exceptions, you may request access, correction, deletion, restriction, portability or objection, and may withdraw consent at any time without affecting earlier lawful processing. You may also lodge a complaint with the Estonian data protection supervisory authority or the authority in your EEA country of residence.",
-            `Send requests to ${COMPANY.email}. We may verify identity before responding and may retain information needed to document the request or comply with legal obligations.`,
+            "Subject to applicable conditions and exceptions, you may request access, rectification, erasure, restriction or portability of personal information and object to relevant processing. You may withdraw consent without affecting processing that was lawful before withdrawal. You may object at any time to use of your information for direct marketing.",
+            `Send requests to ${COMPANY.email} or our contact address. We respond without undue delay and normally within one month, subject to the timing, proportionate identity checks, permitted clarification and extension rules of the applicable regime. If a permitted extension is needed, we explain the reason within the required initial period. Requests are normally free; a charge or refusal is applied only where legally allowed and explained.`,
+            "You may complain to the Information Commissioner’s Office (ICO) at https://ico.org.uk/make-a-complaint/. If EU GDPR applies, you may also complain to a competent EEA supervisory authority, including the authority for your habitual residence, workplace or alleged infringement. Our internal complaint route does not remove your right to a regulator or court.",
           ],
         },
         {
@@ -132,9 +141,24 @@ export default function PrivacyPage() {
           ],
         },
         {
-          heading: "16. Changes and contact",
+          heading: "16. Personal data complaints",
           blocks: [
-            `We may update this Policy to reflect changes in law, providers or the Services. The current version will be published with its update date. Questions and rights requests should be sent to ${COMPANY.name} at ${COMPANY.email} or to the registered address stated above.`,
+            `If you are concerned about our handling of your personal information, email ${COMPANY.email} or write to our contact address. Describe the issue and the outcome sought. You do not have to use a particular form or legal terminology, and you may complain through an authorised representative.`,
+            "We acknowledge a data protection complaint within 30 days of receipt, make appropriate enquiries without undue delay, keep you reasonably informed and communicate the outcome and available escalation route without undue delay. This acknowledgement deadline is distinct from the deadline for responding to an individual rights request. We handle complaint information under this Policy and retain only what is necessary for resolution, accountability or a legal obligation.",
+          ],
+        },
+        {
+          heading: "17. Operator transition and change of controller",
+          blocks: [
+            "When account information is transferred to us as part of the operator transition, it is used to continue account administration, recognise balances and service entitlements, deal with payment and support matters, maintain security and meet legal obligations. The relevant categories may include registration, billing, transaction, entitlement, preference, complaint and compliance records. No retained proxy traffic history is transferred because such history is not stored in the ordinary provision of the Services.",
+            "We use the lawful basis applicable to each purpose, including contract performance, proportionate legitimate interests in continuity and security, and legal obligations where relevant. Any consent-dependent use requires valid consent covering that use; the transition is not a new marketing consent or permission for unrelated use.",
+            "The transition is subject to appropriate due diligence, minimisation, secure transfer and applicable cross-border safeguards. The account notice explains the new controller and the timing. A previous controller may retain information it lawfully needs for its own legal obligations or historic disputes and remains responsible for that processing. Contact us for information about processing after the transition or the appropriate route for an earlier matter.",
+          ],
+        },
+        {
+          heading: "18. Changes and contact",
+          blocks: [
+            `We may update this Policy to reflect changes in law, providers or the Services. The current version will be published with its update date. Questions and rights requests should be sent to ${COMPANY.name} at ${COMPANY.email} or to the contact address stated above.`,
           ],
         },
       ]}

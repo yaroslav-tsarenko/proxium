@@ -5,24 +5,24 @@ import { COMPANY } from "@/lib/company";
 export const metadata: Metadata = {
   title: "Legal Notice & Company Information | Proxium",
   description:
-    "Company and service-provider information for Proxium, operated by PRONTOWARE OÜ, including registered details, governing law and consumer complaints.",
+    "Company and service-provider information for Proxium, operated by PRIME OAK VENTURES LIMITED, including registered details, governing law and consumer complaints.",
 };
 
 export default function LegalNoticePage() {
   return (
     <LegalPage
       title="Legal Notice & Company Information"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
           heading: "1. Service provider",
           blocks: [
             { subhead: "Legal name" },
             COMPANY.name,
-            { subhead: "Registry code" },
+            { subhead: "Company number" },
             COMPANY.regNumber,
-            { subhead: "Registered address" },
+            { subhead: "Contact address" },
             COMPANY.address,
             { subhead: "Website" },
             "https://www.worldproxium.com/",
@@ -37,9 +37,10 @@ export default function LegalNoticePage() {
           ],
         },
         {
-          heading: "3. Contract documents",
+          heading: "3. Contract documents and effective dates",
           blocks: [
-            "Use of the website and Services is governed by the Terms & Conditions and the policies contained in this consolidated document. Product-specific details shown at checkout or in an order confirmation also apply.",
+            "The Terms and Conditions and incorporated policies govern transactions made with Proxium under the applicable version. The order confirmation records service-specific terms. The revision date identifies the text version; the applicable effective date is separately stated when the terms are offered or in an operator change notice for an existing account.",
+            "Existing account balances, active purchases and accrued rights are preserved under the documented transition arrangements. Publication of a new operator’s details does not retrospectively change a completed transaction’s seller, release a previous operator or itself transfer contractual obligations.",
           ],
         },
         {
@@ -51,7 +52,7 @@ export default function LegalNoticePage() {
         {
           heading: "5. Intellectual property",
           blocks: [
-            `The Proxium name, website content, software, interfaces, documentation, graphics and branding are owned by ${COMPANY.name} or its licensors and may not be copied, reproduced or used without permission except as allowed by law or the Terms.`,
+            "Rights in Proxium materials remain with their respective owners or licensors. We provide the permissions needed for authorised service use. A change of operator does not itself establish that every intellectual property right has transferred. Copying or reuse outside the permissions granted by the Terms requires the relevant owner’s consent unless the law permits it.",
           ],
         },
         {
@@ -61,15 +62,16 @@ export default function LegalNoticePage() {
           ],
         },
         {
-          heading: "7. Consumer complaints",
+          heading: "7. Consumer and personal data complaints",
           blocks: [
-            `Consumers should first submit a complaint to ${COMPANY.email}. A consumer may also use any competent alternative dispute resolution body or consumer authority available under mandatory law. Nothing limits a consumer’s right to seek a judicial remedy.`,
+            "First contact our email or contact address to seek resolution. We explain the outcome and any applicable alternative dispute resolution route for an unresolved consumer contract complaint, without representing a membership or commitment that has not been agreed. Your right to use a competent court is preserved.",
+            "For personal data matters, the Privacy Policy and Abuse Reporting and Complaints Procedure provide a separate complaints route, acknowledgement within 30 days, appropriate investigation and communication of the outcome without undue delay. You may also complain to the ICO or another competent authority where applicable.",
           ],
         },
         {
-          heading: "8. Governing law",
+          heading: "8. Applicable law and courts",
           blocks: [
-            "The contractual relationship is governed by Estonian law, subject to mandatory consumer protections and jurisdiction rights that apply in the consumer’s country of residence.",
+            "Contracts under these policies are governed by the law of England and Wales. Business disputes are subject to the exclusive jurisdiction of its courts, unless a separately agreed enterprise contract provides otherwise. A Consumer retains mandatory protections and jurisdiction rights applicable in the country of habitual residence; no exclusive business jurisdiction clause is imposed on Consumers.",
           ],
         },
         {

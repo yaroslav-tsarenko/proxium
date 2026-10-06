@@ -12,8 +12,8 @@ export default function AbusePolicyPage() {
   return (
     <LegalPage
       title="Abuse Reporting & Complaints Procedure"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
           heading: "1. Purpose",
@@ -24,7 +24,7 @@ export default function AbusePolicyPage() {
         {
           heading: "2. Reporting channel",
           blocks: [
-            `Send reports to ${COMPANY.email} with the subject line “Abuse Report”. For urgent threats to life or immediate serious harm, contact the appropriate emergency or law-enforcement authority first.`,
+            `Send reports to ${COMPANY.email} with the subject line "Abuse Report". For urgent threats to life or immediate serious harm, contact the appropriate emergency or law-enforcement authority first.`,
           ],
         },
         {
@@ -83,27 +83,36 @@ export default function AbusePolicyPage() {
           ],
         },
         {
-          heading: "9. Customer complaints",
+          heading: "9. Customer service complaints",
           blocks: [
-            `A Customer may complain about billing, delivery, service quality, privacy or account enforcement by emailing ${COMPANY.email} from the registered address. Include the order or account reference, facts, supporting material and requested resolution.`,
+            `Send billing, delivery, service-quality or account-enforcement complaints to ${COMPANY.email}. Supply a transaction reference if available, the facts and the resolution sought. We may ask for proportionate identity information, but do not refuse a valid complaint solely because it is not sent from the registered email.`,
+            "We investigate and respond within a reasonable time, keeping you informed where further work is needed. A customer may request review of the outcome. If a consumer contract complaint remains unresolved, we explain any applicable alternative dispute resolution route and whether participation is required or offered. This procedure does not claim membership of a particular ADR scheme.",
           ],
         },
         {
-          heading: "10. Appeals",
+          heading: "10. Personal data complaints and rights requests",
+          blocks: [
+            `A complaint about our handling of personal information may be made by email to ${COMPANY.email} or by post to ${COMPANY.address}. A representative may act with authority. Describe the concern and the requested outcome; a particular form or legal wording is not required.`,
+            "We acknowledge a data protection complaint within 30 days of receipt, take appropriate steps to investigate without undue delay, keep the complainant reasonably informed and communicate the outcome without undue delay. A general statement that no response time is guaranteed does not override this duty.",
+            "An access, erasure or other individual rights request has its own legal response deadline, normally one month subject to lawful exceptions or extensions. The complaint acknowledgement period does not replace it. You may complain to the ICO at https://ico.org.uk/make-a-complaint/ or a competent EEA authority where applicable; a complaint to us does not remove that right.",
+          ],
+        },
+        {
+          heading: "11. Appeals",
           blocks: [
             "A Customer may request review of a suspension or termination by explaining why the decision was incorrect or what remediation has been completed. Review may consider severity, recurrence, cooperation, evidence and ongoing risk. Access need not be restored while review is pending.",
           ],
         },
         {
-          heading: "11. Legal requests",
+          heading: "12. Legal requests",
           blocks: [
             `Authorities should identify the issuing authority, legal basis, scope, account or transaction sought, and an official contact. Requests must be properly addressed to ${COMPANY.name} and comply with applicable jurisdiction and procedure. We may seek clarification, challenge an overbroad request and notify an affected person where lawful.`,
           ],
         },
         {
-          heading: "12. Response times and outcomes",
+          heading: "13. Response times and outcomes",
           blocks: [
-            "We aim to address urgent, well-supported reports promptly, but do not guarantee a fixed response or resolution time. Privacy, security and legal constraints may prevent us from disclosing the customer, evidence reviewed or action taken.",
+            "Urgent, well-supported abuse reports are assessed promptly according to risk, but no fixed service-support response time is promised. Statutory complaint, individual rights, cancellation and refund deadlines continue to apply and take priority over this general statement. Privacy or legal constraints may limit disclosure of another customer’s information or the enforcement action taken.",
           ],
         },
       ]}

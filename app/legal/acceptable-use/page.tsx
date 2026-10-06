@@ -12,14 +12,15 @@ export default function AcceptableUsePage() {
   return (
     <LegalPage
       title="Acceptable Use Policy"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
           heading: "1. Purpose and application",
           blocks: [
-            "This Acceptable Use Policy (“AUP”) protects customers, third parties and the Proxium network. It applies to every person, device, application and end user accessing a Proxium Service through your account. It forms part of the Terms & Conditions.",
+            "This Acceptable Use Policy (\"AUP\") protects customers, third parties and the Proxium network. It applies to every person, device, application and end user accessing a Proxium Service through your account. It forms part of the Terms & Conditions.",
             "You may use the Services only for lawful purposes and in a manner that respects security, privacy, intellectual property, network integrity and third-party rights. A use not expressly listed below may still be prohibited if it creates comparable harm or risk.",
+            "Relevant laws include the Computer Misuse Act 1990, applicable fraud and intellectual property laws, UK data protection law and UK sanctions, as well as laws applying to the customer, target system and activity. Technical access through a proxy does not establish authorisation under those laws.",
           ],
         },
         {
@@ -119,7 +120,7 @@ export default function AcceptableUsePage() {
         {
           heading: "11. Enforcement",
           blocks: [
-            "We may block destinations, ports, protocols or request patterns and may suspend or terminate a Service or account where we reasonably suspect a violation. Urgent action may occur without advance notice. We may request use-case information, preserve data already held, notify affected providers or authorities where lawful, and refuse a refund where the Terms and Refund Policy permit.",
+            "We may take proportionate steps to block abusive destinations or traffic patterns and suspend an affected service or account where reasonably necessary. Urgent action may occur without notice. We may request use-case information, preserve information already lawfully held or notify a relevant provider or authority where lawful. Any deduction or refund restriction must comply with the Terms, the Refund and Cancellation Policy and mandatory rights; enforcement does not automatically confiscate all unused balance.",
             `Enforcement is risk-based and may consider severity, intent, recurrence, customer cooperation and harm. A customer may submit a reasoned appeal through ${COMPANY.email}.`,
           ],
         },

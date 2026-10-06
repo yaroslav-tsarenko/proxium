@@ -12,13 +12,13 @@ export default function PaymentPolicyPage() {
   return (
     <LegalPage
       title="Payment & Account Balance Policy"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
-          heading: "1. Scope",
+          heading: "1. Scope and seller",
           blocks: [
-            "This Payment & Account Balance Policy governs top-ups, currencies, card payments, the Proxium account balance, invoices, payment review and chargebacks. It forms part of the Terms & Conditions.",
+            `This Policy governs top-ups, Visa and Mastercard payments, EUR, GBP and USD transactions, the internal account balance, invoices and payment disputes. The seller for transactions accepted under this Policy is ${COMPANY.name}, company number ${COMPANY.regNumber}, contact address ${COMPANY.address}. Earlier transactions are treated under the operator transition arrangements and are not retrospectively relabelled as new sales.`,
           ],
         },
         {
@@ -36,11 +36,11 @@ export default function PaymentPolicyPage() {
           ],
         },
         {
-          heading: "4. Account balance",
+          heading: "4. Nature and treatment of the account balance",
           blocks: [
-            "A successful top-up creates an internal contractual credit associated with the account. The balance may be used only to buy Proxium Services. It is not transferable between customers, redeemable by a third party, capable of earning interest, or intended as a payment instrument for goods or services supplied by others.",
-            "A balance is not a bank deposit, electronic-money account, wallet, investment or stored-value product independent of the Proxium Services. Cash withdrawal is available only through an eligible refund under the Refund & Cancellation Policy.",
-            "If a balance expiry applies, it must be clearly disclosed before the relevant top-up. In the absence of such disclosure, the balance will not expire solely because time passes while the account remains open and compliant.",
+            "A credited top-up creates a contractual balance usable only to buy Proxium Services. It cannot be transferred between customers, used to pay third-party merchants or earn interest. It is not a bank deposit or a general-purpose payment facility. This Policy does not claim that Proxium is authorised by the Financial Conduct Authority or that a particular regulatory exemption has been granted.",
+            "Any expiry must be clearly agreed before the relevant top-up. Without that disclosure, time alone does not cause an open account’s balance to expire. Suspension, closure or a change of operator does not automatically extinguish an unused balance or accrued refund rights. We account for it and any deduction permitted by the contract and law.",
+            "Existing balances retain their recorded amount, currency and applicable refund dates on transition. An operator transfer is not a new top-up. Redemption is available through eligible commercial or statutory refunds, subject to applicable legal restrictions.",
           ],
         },
         {
@@ -51,10 +51,10 @@ export default function PaymentPolicyPage() {
           ],
         },
         {
-          heading: "6. Pricing and taxes",
+          heading: "6. Total prices, taxes and optional charges",
           blocks: [
-            "The price and applicable taxes are shown before an order is confirmed. Tax treatment may depend on customer type, location, billing information and a valid tax number. You are responsible for supplying accurate tax and billing data.",
-            "You remain responsible for taxes, duties, withholding and bank fees imposed on you, except taxes that Proxium is legally required to collect and remit.",
+            "Before you confirm, the total payable price includes taxes and unavoidable charges that can reasonably be calculated. If a mandatory amount cannot be calculated in advance, we explain the method of calculation. No optional extra is charged without express agreement.",
+            "VAT treatment depends on the actual supply, customer location and status, and any valid tax evidence. We collect and account for taxes where legally required. A VAT number or registration is stated only if it actually applies; UK incorporation does not itself establish VAT registration. You must supply accurate billing information and remain responsible for charges lawfully imposed on you by your bank or authority.",
           ],
         },
         {
@@ -65,9 +65,10 @@ export default function PaymentPolicyPage() {
           ],
         },
         {
-          heading: "8. Invoices and records",
+          heading: "8. Invoices, receipts and records",
           blocks: [
-            "Invoices or transaction receipts are made available electronically or supplied by email where applicable. You must review billing data and request corrections promptly. We retain transaction records as required by tax, accounting, fraud-prevention and dispute obligations.",
+            "Electronic receipts or invoices identify the seller for the relevant transaction, its company number, the transaction date, currency, amount and tax information required by law. A new receipt is not issued to recast an earlier sale as having been made by a different company. Historic seller details remain correct for historic transactions.",
+            "You may request a billing correction by email. Transaction and accounting records are retained for the applicable legal period and for proportionate dispute or fraud-prevention purposes. This is separate from proxy traffic logging.",
           ],
         },
         {
@@ -80,14 +81,16 @@ export default function PaymentPolicyPage() {
         {
           heading: "10. Chargebacks and payment disputes",
           blocks: [
-            `Contact ${COMPANY.email} before initiating a chargeback so that we can investigate. An unjustified chargeback, payment reversal or use of an unauthorised payment instrument may lead to suspension, recovery of amounts and reasonable costs, and restriction of future payments.`,
-            "Nothing prevents a consumer from exercising a lawful card or payment right. We may provide transaction, acceptance, activation and account records to payment providers when responding to a dispute.",
+            "You may contact us to resolve a disputed payment, but contacting us first is not a condition of a statutory or card-scheme right. We will not penalise a Consumer solely for making a legitimate dispute or exercising a lawful right.",
+            "An unauthorised payment, fraud or knowingly unfounded reversal may result in proportionate investigation, restriction and lawful recovery of amounts due. We may provide payment providers with relevant transaction, acceptance, activation and account records. No retained proxy traffic record is represented as available.",
+            "If a refund and chargeback concern the same amount, we coordinate them to avoid duplicate reimbursement. An unrelated refund or statutory remedy is not automatically withheld merely because another payment is disputed.",
           ],
         },
         {
-          heading: "11. Refunds",
+          heading: "11. Refunds and closed accounts",
           blocks: [
-            "Refunds are governed by the Refund & Cancellation Policy and are normally returned to the original payment method. A refund reduces the corresponding balance and may be refused where the amount has already been spent, the request is late, or fraud or abuse applies, subject to mandatory law.",
+            "The Refund and Cancellation Policy governs commercial refunds, consumer cancellation and defective service remedies. Statutory rights are considered independently of our 14-day commercial top-up offer. Funds already spent may still be refundable where a statutory service remedy applies.",
+            "Refunds are normally made to the original payment method and currency without a refund fee. If a refund relates to a payment made before the transition, the payment provider and relevant operator may need to coordinate its return; the transition does not reduce the entitlement or replace a statutory deadline with an indefinite processing period. Alternative arrangements require lawful handling and agreement where needed.",
           ],
         },
         {

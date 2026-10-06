@@ -51,7 +51,7 @@ export function Footer() {
             </p>
             <div className="mt-5 space-y-1 text-xs leading-relaxed text-zinc-500">
               <p className="font-medium text-zinc-400">{COMPANY.name}</p>
-              <p>Reg. No.: {COMPANY.regNumber}</p>
+              <p>Company No.: {COMPANY.regNumber}</p>
               {COMPANY.vat && <p>VAT No.: {COMPANY.vat}</p>}
               <p>{COMPANY.address}</p>
               <p>

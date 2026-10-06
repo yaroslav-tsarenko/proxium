@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/LegalPage";
-import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Restricted Countries & Eligibility Policy | Proxium",
@@ -12,8 +11,8 @@ export default function RestrictedCountriesPolicyPage() {
   return (
     <LegalPage
       title="Restricted Countries & Eligibility Policy"
-      updated="20 August 2026"
-      intro="Applies to worldproxium.com and the Proxium Services."
+      updated="6 October 2026"
+      intro="Applies to worldproxium.com and the Proxium Services. Effective date: as described in the Terms."
       sections={[
         {
           heading: "1. Purpose",
@@ -24,30 +23,8 @@ export default function RestrictedCountriesPolicyPage() {
         {
           heading: "2. Restricted countries",
           blocks: [
-            "Proxium is not available to persons located, resident, established or ordinarily operating in the following countries or territories, and payments connected to them are not accepted:",
-            {
-              list: [
-                "Afghanistan",
-                "Belarus",
-                "Central African Republic",
-                "Cuba",
-                "Democratic Republic of the Congo",
-                "Haiti",
-                "Iran",
-                "Iraq",
-                "Mali",
-                "Myanmar (Burma)",
-                "North Korea",
-                "Russia",
-                "Somalia",
-                "South Sudan",
-                "Sudan",
-                "Syria",
-                "Venezuela",
-                "Yemen",
-                "Zimbabwe",
-              ],
-            },
+            "As a commercial service and payment-risk restriction, Proxium is unavailable to persons located, resident, established or ordinarily operating in the following countries, and payments connected with them are not accepted. This service list is not a claim that every listed country is subject to a comprehensive UK sanctions ban:",
+            "Afghanistan; Belarus; Central African Republic; Cuba; Democratic Republic of the Congo; Haiti; Iran; Iraq; Mali; Myanmar (Burma); North Korea; Russia; Somalia; South Sudan; Sudan; Syria; Venezuela; Yemen; Zimbabwe.",
           ],
         },
         {
@@ -58,9 +35,11 @@ export default function RestrictedCountriesPolicyPage() {
           ],
         },
         {
-          heading: "4. Sanctioned and prohibited persons",
+          heading: "4. UK sanctions and prohibited persons",
           blocks: [
-            "The Services are not available to any person or entity subject to applicable asset-freeze, blocking, export-control or similar restrictions, or to a person acting for or owned or controlled by such a person, regardless of country.",
+            "Separate from the commercial country list, we comply with UK sanctions applying to the company, including relevant financial and trade restrictions. The UK Sanctions List is the current source of UK designations; applicable regulations determine the actual prohibition. Relevant restrictions may also arise under another law that applies to a transaction.",
+            "We do not provide a service or make funds or economic resources available where prohibited, including to a designated person or an entity owned or controlled by a designated person under the applicable legal test. Location in a permitted country does not override a personal, ownership or control restriction. A nationality alone is not treated as proof that a person is sanctioned.",
+            "Restrictions, exceptions and licences are applied according to the relevant law. This Policy does not represent that Proxium holds a sanctions licence or that any transaction has been approved by an authority.",
           ],
         },
         {
@@ -70,10 +49,10 @@ export default function RestrictedCountriesPolicyPage() {
           ],
         },
         {
-          heading: "6. Screening and decisions",
+          heading: "6. Checks, decisions and review",
           blocks: [
-            "We and our payment or compliance providers may perform automated and manual checks at registration, payment and during the account relationship. We may refuse, suspend, terminate, hold or refund a transaction where eligibility cannot be established or risk is unacceptable.",
-            `Where legally permitted, a person may request review by contacting ${COMPANY.email} and supplying accurate supporting information. Proxium is not required to disclose confidential screening rules or information whose disclosure would undermine security or legal compliance.`,
+            "We and relevant providers may use proportionate manual or automated eligibility and payment checks. We may request information necessary to clarify location, ownership, control, payment ownership or proposed use, and refuse or restrict supply where required by law or where a documented service restriction applies.",
+            "We explain the decision and a review route where lawful, without disclosing security-sensitive or prohibited information. A customer may request review at our contact email. Any balance, transaction or refund remains subject to its contractual and statutory treatment; it is not automatically forfeited because screening is incomplete. A legally frozen amount is handled under the applicable prohibition and release process.",
           ],
         },
         {

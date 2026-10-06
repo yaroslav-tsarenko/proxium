@@ -27,7 +27,7 @@ export function generateInvoicePdf(data: InvoiceData): Promise<Buffer> {
     doc.fillColor("#555555").fontSize(10).font("Helvetica")
       .text(COMPANY.name, 400, 50, { align: "right" })
       .text(COMPANY.address, { align: "right", width: 145 })
-      .text(`Reg. No.: ${COMPANY.regNumber}`, { align: "right" });
+      .text(`Company No.: ${COMPANY.regNumber}`, { align: "right" });
     if (COMPANY.vat) doc.text(`VAT No.: ${COMPANY.vat}`, { align: "right" });
     doc.text(COMPANY.email, { align: "right" });
 
